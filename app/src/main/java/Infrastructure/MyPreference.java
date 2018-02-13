@@ -1,0 +1,40 @@
+package Infrastructure;
+
+public class MyPreference {
+    public static String mUserLogin="UserLogin";
+    public static String mUserType = "UserType";
+    public static String mPreferences = "Preferences";
+    public static String type = "type";
+    public static String login = "login";
+    public static String userId = "userId";
+    public static String localUserId = "localUserId";
+    public static String isPushNotificationsEnabled = "isPushNotificationsEnabled";
+    public static String email = "email";
+    public static String userName = "userName";
+    public static String url = "url";
+    public static String mDeviceToken = "mDeviceToken";
+    public static String tokenId = "tokenId";
+    public static String latitude = "latitude";
+    public static String longitude = "longitude";
+    public static String verify = "verify";
+    public static String phoneNumber = "phoneNumber";
+    public static String lname = "lname";
+    public static String fname = "fname";
+    public static String language = "language";
+    public static String unit = "unit";
+    public static String streetAddress = "streetAddress";
+    public static String suburb = "suburb";
+    public static String state = "state";
+    public static String post_code = "postCode";
+    public static String profileImageUrl = "profile";
+    public static String aboutMe = "aboutMe";
+    public static String title = "title";
+    public static String country = "Country";
+    public static String authToken = "authToken";
+    public static String singUp = "SINGUP";
+    public static String SingUpPreferences = "SingUpPreferences";
+    public static String abn = "ABN";
+    public static int GOOGLE_API_CLIENT_ID = 11254;
+    public static String loginObj = "LoginObj";
+    public static String password = "Password";
+}
