@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/stdImag"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/students" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stdImag">
+
+                    <ImageView
+                        android:id="@+id/hadImage"
+                        android:layout_width="70dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/hat" />
+
+                    <LinearLayout
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+
+                        <CustomControl.TextViewProximanovaSemiBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/beliveText"
+                            android:textSize="27sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CustomControl.TextViewProximanovaSemiBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/trustYour"
+                                android:textSize="27sp" />
+
+                            <CustomControl.TextViewProximanovaBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="@string/ability"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blue_color"
+                                android:textSize="27sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <CustomControl.ButtonProximanovaSemiBold
+                        android:id="@+id/startBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/text"
+                        android:layout_marginTop="60dp"
+                        android:text="@string/startnow"
+                        android:textSize="18sp"
+                        android:layout_marginRight="40dp"
+                        android:textColor="@color/blue_color"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/white_rounded_button" />
+                    <CustomControl.ButtonProximanovaSemiBold
+                        android:id="@+id/alredybtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/startBtn"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="40dp"
+                        android:textColor="@color/blue_color"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="40dp"
+                        android:text="@string/iAlerdy"
+                        android:background="@drawable/white_rounded_button" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

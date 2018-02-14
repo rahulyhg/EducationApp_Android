@@ -24,7 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".SelectionActivity"/>
+        <activity android:name=".Login_Activity"/>
+        <activity android:name=".ForgotPassword_Activity"/>
+        <activity android:name=".SignUp_Activity"/>
+        <activity android:name=".Home_Activity"/>
     </application>
 
 </manifest>

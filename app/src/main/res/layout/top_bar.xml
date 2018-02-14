@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent">
+
+        <CustomControl.TextViewIconStyle
+            android:id="@+id/left"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/back_arrow"
+            android:textColor="@android:color/white"
+            android:textSize="35sp"
+            android:visibility="invisible" />
+
+
+
+        <CustomControl.TextViewProximanovaSemiBold
+            android:id="@+id/toolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:inputType="textCapSentences"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/right3"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/right2"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/right"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/view_horizontal_margin"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+       <!-- <RelativeLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/left"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            >
+
+            &lt;!&ndash;  <CustomControl.TextViewIcomoon
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:layout_gravity="center"
+                  android:textColor="@android:color/white"
+                  android:textSize="25sp"
+                  android:visibility="visible" />&ndash;&gt;
+
+            <CustomControl.EditTextProximanovaRegular
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="1"
+                android:inputType="text"
+                android:background="@drawable/edit_text_bg"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="8dp"
+                android:imeOptions="actionDone"
+                android:hint="@string/whatAreYouLookingfor"
+                />
+            <CustomControl.TextViewIconStyle
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="@string/searchIcon"/>
+        </RelativeLayout>-->
+
+    </RelativeLayout>
+</RelativeLayout>

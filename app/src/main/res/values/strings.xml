@@ -1,4 +1,41 @@
 <resources>
     <string name="app_name">EducationApp</string>
+
+    <!--/// fontawesome String //-->
+    <string name="forword_arrow">&#xf105;</string>
+    <string name="back_arrow">&#xf104;</string>
+    <string name="saveBtn">f0c7</string>
+    <string name="plus">&#xf067;</string>
+    <string name="tick">&#xf00c;></string>
+    <string name="edit">&#xf040;</string>
+    <string name="menu">&#xf039;</string>
+    <string name="searchIcon">&#xf002;</string>
+    <string name="rightArrow">&#xf105;</string>
+    <string name="close">&#xf00d;</string>
+    <string name="calender">&#xf133;</string>
+    <string name="clock">&#xf017;</string>
+    <string name="marker">&#xf041;</string>
+    <string name="mobile_Icon">&#xf10b;</string>
+    <string name="open_envelop">&#xf003;</string>
+
+
     <string name="internal_storage">internal storage</string>
+    <string name="beliveText">Believe in yourself</string>
+    <string name="trustYour">Trust your</string>
+    <string name="ability">ability!</string>
+    <string name="startnow">Start Now !</string>
+    <string name="iAlerdy">I already perticipate !</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgotPassword">Forgot your password?</string>
+    <string name="singIn">sing in</string>
+
+    <string name="singUpUnderLine"><u>Sing UP</u></string>
+    <string name="comfirmPassword">Confirm Password</string>
+    <string name="uni">University</string>
+    <string name="signUpBtn">sign up</string>
+    <string name="forgotPasswordText">Forgot Password</string>
+    <string name="forgotText">Enter your email below to recive your password reset instructions</string>
+    <string name="emailAddress">please enter your email address</string>
+    <string name="send">Send</string>
 </resources>

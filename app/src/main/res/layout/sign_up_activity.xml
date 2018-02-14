@@ -2,28 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@drawable/full_blue_bg">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-       >
+        android:scrollbars="none">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/blue_with_white">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <CustomControl.TextViewProximanovaSemiBold
                 android:id="@+id/singText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="270dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="70dp"
                 android:text="SIGN IN"
                 android:textColor="@color/white"
-                android:layout_marginLeft="20dp"
                 android:textSize="35dp" />
 
             <LinearLayout
@@ -34,22 +32,39 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginTop="20dp"
+
                 android:background="#00A4E5"
                 android:orientation="vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/userimage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/user" />
+
+                <CustomControl.TextViewProximanovaRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:text="Tap to upload"
+                    android:textColor="@color/white" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginRight="10dp">
 
 
                     <android.support.design.widget.TextInputLayout
                         android:id="@+id/usernameWrapper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColorHint= "@color/white">
+                        android:textColorHint="@color/white">
 
                         <CustomControl.EditTextProximanovaRegular
                             android:id="@+id/editTextEmailUserName"
@@ -57,10 +72,10 @@
                             android:layout_height="40dp"
                             android:background="@android:color/transparent"
                             android:hint="@string/email"
-                            android:textColor="@color/white"
-                            android:textColorHint="@color/white"
                             android:inputType="textEmailAddress"
-                            android:maxLines="1" />
+                            android:maxLines="1"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white" />
 
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
@@ -95,24 +110,22 @@
                         android:layout_marginRight="10dp"
                         android:layout_toLeftOf="@id/showIcon">
 
-
                         <android.support.design.widget.TextInputLayout
                             android:id="@+id/passwordWrapper"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColorHint= "@color/white">
-
+                            android:textColorHint="@color/white">
 
                             <CustomControl.EditTextProximanovaRegular
                                 android:id="@+id/password"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
-                                android:textColor="@color/white"
-                                android:textColorHint="@color/white"
                                 android:background="@android:color/transparent"
                                 android:hint="@string/password"
                                 android:inputType="textPassword"
-                                android:maxLines="1" />
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:textColorHint="@color/white" />
 
                         </android.support.design.widget.TextInputLayout>
                     </LinearLayout>
@@ -130,27 +143,109 @@
 
                 </RelativeLayout>
 
-                <CustomControl.TextViewProximanovaRegular
-                    android:id="@+id/forgotBtn"
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/showIcon2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="20dp"
+                        android:padding="2dp"
+                        android:src="@drawable/eye" />
+
+                    <LinearLayout
+                        android:id="@+id/llayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@id/showIcon2">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/passwordWrapper2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/white">
+
+                            <CustomControl.EditTextProximanovaRegular
+                                android:id="@+id/cmfPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/comfirmPassword"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:textColorHint="@color/white" />
+
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/llayout2"
+                        android:layout_marginBottom="@dimen/view_horizontal_margin"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/white" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:text="@string/forgotPassword"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/uniWrapper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/white">
+
+                        <CustomControl.EditTextProximanovaRegular
+                            android:id="@+id/editTextEmailUniName"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/uni"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/llayout2"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white" />
+
             </LinearLayout>
 
             <CustomControl.ButtonProximanovaSemiBold
-                android:id="@+id/singInBtn"
+                android:id="@+id/signUpBtn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@+id/editLayout"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/white_rounded_button"
-                android:text="@string/singIn"
+                android:text="@string/signUpBtn"
                 android:textColor="@color/blue_color"
                 android:textSize="18sp" />
 
@@ -162,7 +257,8 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="0dp"
@@ -193,7 +289,8 @@
                 android:layout_height="60dp"
                 android:layout_below="@+id/orId"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp">
+                android:layout_marginRight="40dp"
+                android:visibility="gone">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -237,10 +334,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:orientation="horizontal"
-                android:layout_below="@+id/socialIcons"
-                android:gravity="center">
-
+                android:layout_below="@+id/signUpBtn"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <CustomControl.TextViewProximanovaRegular
                     android:layout_width="wrap_content"
@@ -252,20 +348,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/singUpUnderLine"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"/>
+                    android:textStyle="bold" />
             </LinearLayout>
         </RelativeLayout>
-
-
     </ScrollView>
-    <CustomControl.TextViewIconStyle
-        android:id="@+id/backBtn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="@string/back_arrow"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
 </RelativeLayout>
