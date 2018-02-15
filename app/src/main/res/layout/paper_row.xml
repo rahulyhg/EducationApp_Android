@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@drawable/box">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/paperImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:layout_toRightOf="@id/paperImage">
+
+        <CustomControl.TextViewProximanovaSemiBold
+            android:id="@+id/univercityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chandigarh University"
+            android:maxLines="1"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/balck"
+            android:textSize="22sp"
+            />
+        <CustomControl.TextViewProximanovaRegular
+            android:id="@+id/courseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/course"
+            android:layout_below="@id/univercityName"
+            android:textSize="16sp"
+            android:padding="1sp"
+            />
+        <CustomControl.TextViewProximanovaRegular
+            android:layout_toRightOf="@id/courseText"
+            android:padding="1sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="M.Tech"
+            android:textSize="16sp"
+            android:layout_below="@id/univercityName"/>
+        <CustomControl.TextViewProximanovaRegular
+            android:id="@+id/examText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/examPaperText"
+            android:layout_below="@id/courseText"
+            android:textSize="16sp"
+            android:padding="1sp"
+            />
+        <CustomControl.TextViewProximanovaRegular
+            android:layout_toRightOf="@id/examText"
+            android:padding="1sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="M.Texh"
+            android:textSize="16sp"
+            android:layout_below="@id/courseText"/>
+
+
+    </RelativeLayout>
+    <CustomControl.TextViewProximanovaRegular
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11:00 PM"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@id/paperImage"
+        android:layout_alignParentBottom="true"/>
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/next"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>

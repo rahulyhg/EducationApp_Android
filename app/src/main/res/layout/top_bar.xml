@@ -17,7 +17,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="@string/back_arrow"
-            android:textColor="@android:color/white"
+            android:textColor="@color/balck"
             android:textSize="35sp"
             android:visibility="invisible" />
 
@@ -30,7 +30,7 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:inputType="textCapSentences"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -64,6 +64,18 @@
                 android:visibility="gone" />
 
         </LinearLayout>
+        <CustomControl.TextViewProximanovaRegular
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editText"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/blue_color"
+            android:layout_centerVertical="true"
+            android:visibility="gone"/>
        <!-- <RelativeLayout
             android:id="@+id/searchLayout"
             android:layout_width="match_parent"

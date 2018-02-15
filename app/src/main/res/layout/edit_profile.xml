@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_with_orange">
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/top_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar">
+
+        <RelativeLayout
+            android:id="@+id/imageRelativLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:id="@+id/imagelayout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/blue_border_bg"
+                android:minHeight="100dp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/userimage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/user" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@id/imagelayout"
+                android:layout_marginBottom="-25dp"
+                android:layout_marginLeft="-20dp"
+                android:layout_toRightOf="@+id/imagelayout"
+                android:src="@drawable/add_image" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/nameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageRelativLayout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:id="@+id/showIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="25dp"
+                android:padding="2dp"
+                android:src="@drawable/fine" />
+
+            <LinearLayout
+                android:id="@+id/llayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/showIcon">
+
+
+                <android.support.design.widget.TextInputLayout
+                    style="@style/EditTextHintGray_Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <CustomControl.EditTextProximanovaRegular
+                        android:id="@+id/userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+
+                        android:background="@android:color/transparent"
+                        android:hint="@string/name"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/llayout"
+                android:layout_marginBottom="@dimen/view_horizontal_margin"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorGrey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dobLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameLayout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:id="@+id/showIcon1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="25dp"
+                android:padding="2dp"
+                android:src="@drawable/fine" />
+
+            <LinearLayout
+                android:id="@+id/llayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/showIcon1">
+
+
+                <android.support.design.widget.TextInputLayout
+
+                    style="@style/EditTextHintGray_Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <CustomControl.EditTextProximanovaRegular
+                        android:id="@+id/dobEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/dateOfBirth"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/llayout1"
+                android:layout_marginBottom="@dimen/view_horizontal_margin"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorGrey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/univercitylayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dobLayout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:id="@+id/showIcon2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="25dp"
+                android:padding="2dp"
+                android:src="@drawable/fine" />
+
+            <LinearLayout
+                android:id="@+id/llayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/showIcon2">
+
+
+                <android.support.design.widget.TextInputLayout
+
+                    style="@style/EditTextHintGray_Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <CustomControl.EditTextProximanovaRegular
+                        android:id="@+id/editTextUnivercity"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/uni"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/llayout2"
+                android:layout_marginBottom="@dimen/view_horizontal_margin"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorGrey" />
+        </RelativeLayout>
+
+        <CustomControl.ButtonProximanovaSemiBold
+            android:id="@+id/signUpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/blue_rounded_background"
+            android:text="@string/update"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

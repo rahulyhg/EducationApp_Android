@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/capImag"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/hat" />
+
+            <LinearLayout
+                android:id="@+id/univercitylayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/capImag"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <CustomControl.TextViewProximanovaRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/uni"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/univerCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_height"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:autofillHints="Oxford" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorGrey" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/courselayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/univercitylayout"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+              >
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/EditTextHintGray_Black"
+                    >
+
+                    <CustomControl.EditTextProximanovaRegular
+                        android:id="@+id/editTextCourse"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/courseTitle"
+                        android:maxLines="1"
+                        android:clickable="false"
+                        android:textColor="@color/colorGrey"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="@dimen/view_horizontal_margin"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/courselayout"
+                android:background="@color/colorGrey" />
+
+            <LinearLayout
+                android:id="@+id/examLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/courselayout"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+              >
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/EditTextHintGray_Black"
+                    >
+
+                    <CustomControl.EditTextProximanovaRegular
+                        android:id="@+id/editTextExamText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/examType"
+                        android:maxLines="1"
+                        android:clickable="false"
+                        android:textColor="@color/colorGrey"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="@dimen/view_horizontal_margin"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/examLayout"
+                android:background="@color/colorGrey" />
+
+            <CustomControl.ButtonProximanovaSemiBold
+                android:id="@+id/searchBtn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/examLayout"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="60dp"
+                android:background="@drawable/blue_rounded_background"
+                android:text="@string/search"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

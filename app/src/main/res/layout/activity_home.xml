@@ -29,8 +29,9 @@
             <LinearLayout
                 android:id="@+id/userLayout"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="vertical">
+                android:layout_height="220dp"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -55,9 +56,9 @@
                     <ImageView
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:layout_marginRight="-38dp"
+                        android:layout_marginRight="-35dp"
                         android:layout_toLeftOf="@id/imageProfile"
-                        android:background="@drawable/cap" />
+                        android:src="@drawable/cap1" />
 
 
                 </RelativeLayout>
@@ -72,6 +73,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:text="Zack Effron"
                     android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
@@ -83,6 +85,7 @@
                     android:layout_marginRight="5dp"
                     android:gravity="center_horizontal"
                     android:maxLines="1"
+                    android:text="zack@gmail.com"
                     android:singleLine="true"
                     android:textColor="@android:color/white"
                     android:textSize="14sp" />
