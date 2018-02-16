@@ -21,7 +21,8 @@ public class ProfileActivity extends Activity {
     TextView topbatText ;
     @BindView(R.id.editText)
     TextView editProfile ;
-
+    @BindView(R.id.left)
+    TextView backBtn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +30,14 @@ public class ProfileActivity extends Activity {
         ButterKnife.bind(this);
         topbatText.setText(getResources().getString(R.string.myProfile));
         editProfile.setVisibility(View.VISIBLE);
+        backBtn.setVisibility(View.VISIBLE);
     }
     @OnClick(R.id.editText)
     void getEditProfile(){
         startActivity(new Intent(this,EditProfile_Activity.class));
+    }
+    @OnClick(R.id.left)
+    void setBackbtn(){
+        onBackPressed();
     }
 }

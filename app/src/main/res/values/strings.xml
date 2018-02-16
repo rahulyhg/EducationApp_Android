@@ -31,6 +31,7 @@
     <string name="singIn">sing in</string>
 
     <string name="singUpUnderLine"><u>Sing UP</u></string>
+    <string name="singInUnderLine"><u>Sing IN</u></string>
     <string name="comfirmPassword">Confirm Password</string>
     <string name="uni">University</string>
     <string name="signUpBtn">sign up</string>
@@ -62,4 +63,11 @@
     <string name="search">Search</string>
     <string name="course">Course:</string>
     <string name="examPaperText">Exam Paper Type:</string>
+    <string name="takePhoto">Take Photo</string>
+    <string name="chooseFromgallry">Choose from Gallery</string>
+    <string name="next">Next</string>
+    <string name="exam">Exam</string>
+    <string name="shortDescription">Short Description</string>
+    <string name="save">Save</string>
+    <string name="myPaper">My Paper</string>
 </resources>

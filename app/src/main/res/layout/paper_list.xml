@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/white">
-
-    <include layout="@layout/top_bar"
-        android:id="@+id/topBar"/>
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/paperRecycleView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_below="@+id/topBar"/>
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/top_bar" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/paperRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topBar"
+        />
+
+    <CustomControl.ButtonProximanovaSemiBold
+        android:id="@+id/nxtBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/blue_rounded_background"
+        android:padding="5dp"
+        android:text="@string/next"
+        android:visibility="gone"
+        android:textColor="@color/white" />
 </RelativeLayout>

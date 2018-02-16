@@ -13,27 +13,26 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by User on 2/15/2018.
+ * Created by User on 2/16/2018.
  */
 
-public class ViewPaperFilter extends Activity {
+public class SendPaper_Activity extends Activity {
     @BindView(R.id.toolbarText)
     TextView topBarText;
     @BindView(R.id.left)
     TextViewIconStyle backBtn;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_paper_filter);
+        setContentView(R.layout.send_paper_activity);
         ButterKnife.bind(this);
         topBarText.setText("The University Collage");
         backBtn.setVisibility(View.VISIBLE);
     }
-
     @OnClick(R.id.searchBtn)
     void setSerarch() {
-        startActivity(new Intent(this, ViwePaperList_Activity.class));
+       startActivity(new Intent(this, Home_Activity.class));
+       finish();
     }
 
     @OnClick(R.id.left)

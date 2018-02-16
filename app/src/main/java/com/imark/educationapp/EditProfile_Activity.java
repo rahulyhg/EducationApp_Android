@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by User on 2/15/2018.
@@ -26,5 +27,9 @@ public class EditProfile_Activity extends Activity{
         ButterKnife.bind(this);
         topBarText.setText(getResources().getString(R.string.editProfile));
         backBtn.setVisibility(View.VISIBLE);
+    }
+    @OnClick(R.id.left)
+    void setBackbtn(){
+        onBackPressed();
     }
 }

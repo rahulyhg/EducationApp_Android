@@ -4,9 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,8 +17,8 @@
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/stdImag"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:background="@drawable/students" />
+                    android:layout_height="300dp"
+                    android:background="@drawable/student" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -97,6 +95,6 @@
                 </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>
-    </ScrollView>
+
 
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -66,6 +67,9 @@ public class Home_Activity extends AppCompatActivity
         navigationModel = new NavigationModel(ContextCompat.getDrawable(this, R.drawable.my_profile), getResources().getString(R.string.myProfile));
         navigationModelList.add(navigationModel);
 
+        navigationModel = new NavigationModel(ContextCompat.getDrawable(this, R.drawable.file), getResources().getString(R.string.myPaper));
+        navigationModelList.add(navigationModel);
+
         navigationModel = new NavigationModel(ContextCompat.getDrawable(this, R.drawable.terms), getResources().getString(R.string.termOfService));
         navigationModelList.add(navigationModel);
 
@@ -94,13 +98,16 @@ public class Home_Activity extends AppCompatActivity
                 startActivity(new Intent(this, ProfileActivity.class));
                 break;
             case 2:
-                Intent intent = new Intent(this, TermsConditionsActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(this, ViwePaperList_Activity.class));
                 break;
+
             case 3:
-                startActivity(new Intent(this, PreivacyPolicyActivity.class));
+                startActivity(new Intent(this, TermsConditionsActivity.class));
                 break;
             case 4:
+                startActivity(new Intent(this, PreivacyPolicyActivity.class));
+                break;
+            case 5:
                 startActivity(new Intent(this, ResetPasswordActivity.class));
                 break;
 
@@ -110,10 +117,19 @@ public class Home_Activity extends AppCompatActivity
 
     @OnClick(R.id.uploadImage)
     void setuploadImage(){
-
+        startActivity(new Intent(this , UploadOptionActivity.class));
     }
     @OnClick(R.id.viewPapers)
     void setViewPapers(){
         startActivity(new Intent(this , ViewPaperFilter.class));
     }
+    @OnClick(R.id.left)
+    void setMenu() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            drawer.openDrawer(GravityCompat.START);
+        }
+    }
+
 }

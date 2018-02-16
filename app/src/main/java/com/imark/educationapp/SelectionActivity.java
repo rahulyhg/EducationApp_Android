@@ -38,12 +38,13 @@ public class SelectionActivity extends Activity{
     @OnClick(R.id.startBtn)
     void setStartBtn(){
         setButtonState(startBtn , alredybtn);
-        startActivity(new Intent(this , Login_Activity.class));
+        startActivity(new Intent(this , SignUp_Activity.class));
     }
  @OnClick(R.id.alredybtn)
     void setAlredyBtn(){
+
      setButtonState(alredybtn , startBtn);
-     startActivity(new Intent(this , SignUp_Activity.class));
+     startActivity(new Intent(this , Login_Activity.class));
     }
 
     public void setButtonState(Button textView1, Button textView2) {

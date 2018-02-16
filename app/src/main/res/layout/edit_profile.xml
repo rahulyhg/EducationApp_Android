@@ -7,11 +7,17 @@
     <include
         android:id="@+id/topBar"
         layout="@layout/top_bar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/topBar">
+
+       >
 
         <RelativeLayout
             android:id="@+id/imageRelativLayout"
@@ -224,6 +230,7 @@
             android:id="@+id/signUpBtn"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_below="@id/univercitylayout"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
@@ -231,7 +238,9 @@
             android:background="@drawable/blue_rounded_background"
             android:text="@string/update"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
     </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
