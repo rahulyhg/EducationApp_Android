@@ -32,15 +32,11 @@ public class SplashActivity extends Activity {
                 try {
 
                     sleep(2000);
-                    startActivity(new Intent(SplashActivity.this,SelectionActivity.class));
+
                    if(AppComman.getInstance(SplashActivity.this).isUserLogIn()){
-
-                            //startActivity(new Intent(SplashActivity.this,HomeActivity.class));
-
-                           // startActivity(new Intent(SplashActivity.this,Navigation.class));
-
+                       startActivity(new Intent(SplashActivity.this,Home_Activity.class));
                     }else {
-                        //startActivity(new Intent(SplashActivity.this, SelectionActivity.class));
+                       startActivity(new Intent(SplashActivity.this,SelectionActivity.class));
                     }
                     finish();
 

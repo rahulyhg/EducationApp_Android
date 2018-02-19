@@ -53,7 +53,7 @@
                     android:id="@+id/usernameWrapper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                    >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -66,7 +66,7 @@
                         android:maxLines="1"
                         android:text="zack"
                         android:focusable="false"
-                        android:textColor="@color/colorGrey"
+                        android:textColor="@color/balck"
                          />
 
                 </android.support.design.widget.TextInputLayout>
@@ -91,7 +91,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                    >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -104,7 +104,7 @@
                         android:maxLines="1"
                         android:text="25-jan-2018"
                         android:focusable="false"
-                        android:textColor="@color/colorGrey"
+                        android:textColor="@color/balck"
 />
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
@@ -128,7 +128,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                     >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -139,7 +139,7 @@
                         android:hint="@string/univercity"
                         android:maxLines="1"
                         android:text="Oxford"
-                        android:textColor="@color/colorGrey"
+                        android:textColor="@color/balck"
                         android:focusable="false"
                         android:clickable="false"
                        />
@@ -166,7 +166,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                     >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -179,7 +179,7 @@
                         android:focusable="true"
                         android:text="2558"
                         android:clickable="false"
-                        android:textColor="@color/colorGrey"
+                        android:textColor="@color/balck"
                         />
 
                 </android.support.design.widget.TextInputLayout>
@@ -203,7 +203,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                    >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -217,7 +217,7 @@
                         android:clickable="false"
                         android:focusable="false"
                         android:text="25-jan-2018"
-                        android:textColor="@color/colorGrey"
+                        android:textColor="@color/balck"
                         />
 
                 </android.support.design.widget.TextInputLayout>
@@ -241,7 +241,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                    >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -252,7 +252,7 @@
                         android:hint="@string/memberSince"
                         android:maxLines="1"
                         android:clickable="false"
-                        android:textColor="@color/colorGrey"
+                        android:textColor="@color/balck"
                         android:text="14-jan-2014"
                         />
 

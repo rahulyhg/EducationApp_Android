@@ -32,4 +32,8 @@ public class EditProfile_Activity extends Activity{
     void setBackbtn(){
         onBackPressed();
     }
+    @OnClick(R.id.update)
+    void update(){
+        onBackPressed();
+    }
 }

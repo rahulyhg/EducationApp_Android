@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/white_with_orange">
 
     <include
@@ -84,7 +85,7 @@
 
 
                 <android.support.design.widget.TextInputLayout
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -93,9 +94,10 @@
                         android:id="@+id/userName"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-
                         android:background="@android:color/transparent"
                         android:hint="@string/name"
+                        android:textCursorDrawable="@null"
+                        android:textColor="@color/balck"
                         android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -142,17 +144,19 @@
 
                 <android.support.design.widget.TextInputLayout
 
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
 
                     <CustomControl.EditTextProximanovaRegular
                         android:id="@+id/dobEditText"
+                        android:textColor="@color/balck"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@android:color/transparent"
                         android:hint="@string/dateOfBirth"
+                        android:textCursorDrawable="@null"
                         android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -198,8 +202,7 @@
 
 
                 <android.support.design.widget.TextInputLayout
-
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -210,6 +213,8 @@
                         android:layout_height="40dp"
                         android:background="@android:color/transparent"
                         android:hint="@string/uni"
+                        android:textCursorDrawable="@null"
+                        android:textColor="@color/balck"
                         android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -227,7 +232,7 @@
         </RelativeLayout>
 
         <CustomControl.ButtonProximanovaSemiBold
-            android:id="@+id/signUpBtn"
+            android:id="@+id/update"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_below="@id/univercitylayout"

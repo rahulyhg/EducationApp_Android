@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/full_blue_bg">
 
     <ScrollView
@@ -45,6 +46,7 @@
                     android:background="@drawable/user" />
 
                 <CustomControl.TextViewProximanovaRegular
+                    android:id="@+id/tapUpload"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -73,6 +75,7 @@
                             android:background="@android:color/transparent"
                             android:hint="@string/email"
                             android:inputType="textEmailAddress"
+                            android:textCursorDrawable="@null"
                             android:maxLines="1"
                             android:textColor="@color/white"
                             android:textColorHint="@color/white" />
@@ -179,6 +182,7 @@
                                 android:hint="@string/comfirmPassword"
                                 android:inputType="textPassword"
                                 android:maxLines="1"
+                                android:textCursorDrawable="@null"
                                 android:textColor="@color/white"
                                 android:textColorHint="@color/white" />
 
@@ -218,6 +222,7 @@
                             android:background="@android:color/transparent"
                             android:hint="@string/uni"
                             android:inputType="text"
+                            android:textCursorDrawable="@null"
                             android:maxLines="1"
                             android:textColor="@color/white"
                             android:textColorHint="@color/white" />
@@ -342,7 +347,7 @@
                 <CustomControl.TextViewProximanovaRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Already Have an account"
+                    android:text="Already Have an account? "
                     android:textColor="@color/white" />
 
                 <CustomControl.TextViewProximanovaSemiBold
@@ -355,4 +360,13 @@
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progressBar"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/white"
+        app:indicatorName="LineSpinFadeLoaderIndicator" />
 </RelativeLayout>

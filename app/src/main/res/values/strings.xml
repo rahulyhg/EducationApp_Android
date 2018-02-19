@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EducationApp</string>
+    <string name="app_name">The University Collage</string>
 
     <!--/// fontawesome String //-->
     <string name="forword_arrow">&#xf105;</string>
@@ -28,10 +28,11 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="forgotPassword">Forgot your password?</string>
-    <string name="singIn">sing in</string>
+    <string name="forgotPassword1">Forgot password</string>
+    <string name="singIn">sign in</string>
 
-    <string name="singUpUnderLine"><u>Sing UP</u></string>
-    <string name="singInUnderLine"><u>Sing IN</u></string>
+    <string name="singUpUnderLine"><u>Sign UP</u></string>
+    <string name="singInUnderLine"><u>Sign IN</u></string>
     <string name="comfirmPassword">Confirm Password</string>
     <string name="uni">University</string>
     <string name="signUpBtn">sign up</string>
@@ -69,5 +70,19 @@
     <string name="exam">Exam</string>
     <string name="shortDescription">Short Description</string>
     <string name="save">Save</string>
-    <string name="myPaper">My Paper</string>
+    <string name="myPaper">My Papers</string>
+    <string name="log_out">Are you sure want to logout ?</string>
+    <string name="priPassword">Previous Password</string>
+    <string name="new_Password">New Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="cancel">Cancel</string>
+    <string name="plzEnterEmailId">Please enter valid email id</string>
+    <string name="emailValidation">Please enter valid Email Id</string>
+    <string name="passwordValidation">Please Enter Password</string>
+    <string name="confirmPasswordValidation">Please Enter confirm Password </string>
+    <string name="confiemPasswordnotChange">Password is not matched</string>
+    <string name="serverError">Server Error</string>
+    <string name="internetFail">Please check your internet connection</string>
 </resources>

@@ -15,7 +15,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
+import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -26,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.ImageListObj;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -44,11 +47,18 @@ public class UploadOptionActivity extends Activity {
     String uploadBy; //0 = camera , 1 = gallery
     private static int RESULT_LOAD_IMG = 1;
     private static final int RESULT_CAPTURE_IMG = 2;
+    @BindView(R.id.toolbarText)
+    TextView toolBarText;
+    @BindView(R.id.left)
+    TextView backBtn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.upload_option_screen);
         ButterKnife.bind(this);
+        toolBarText.setText(getResources().getString(R.string.upload));
+        backBtn.setVisibility(View.VISIBLE);
     }
     @OnClick(R.id.addCameraImage)
     void addCameraImage(){
@@ -69,6 +79,11 @@ public class UploadOptionActivity extends Activity {
         } else {
             startCameraIntent();
         }
+    }
+    @OnClick(R.id.left)
+    void setbackBtn()
+    {
+        onBackPressed();
     }
 
     private void startCameraIntent() {

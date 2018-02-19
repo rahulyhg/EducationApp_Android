@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <include
@@ -73,7 +74,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                     >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -84,7 +85,8 @@
                         android:hint="@string/courseTitle"
                         android:maxLines="1"
                         android:clickable="false"
-                        android:textColor="@color/colorGrey"
+                        android:textCursorDrawable="@null"
+                        android:textColor="@color/balck"
                         />
 
                 </android.support.design.widget.TextInputLayout>
@@ -113,7 +115,7 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/EditTextHintGray_Black"
+                    app:hintTextAppearance="@color/balck"
                     >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -124,7 +126,8 @@
                         android:hint="@string/examType"
                         android:maxLines="1"
                         android:clickable="false"
-                        android:textColor="@color/colorGrey"
+                        android:textColor="@color/balck"
+                        android:textCursorDrawable="@null"
                         />
 
                 </android.support.design.widget.TextInputLayout>
