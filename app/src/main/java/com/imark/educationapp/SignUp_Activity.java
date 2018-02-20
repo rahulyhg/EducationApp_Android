@@ -58,11 +58,8 @@ public class SignUp_Activity extends Activity {
     @BindView(R.id.userimage)
     SimpleDraweeView userimage;
     Uri outPutfileUri = Uri.parse("");
-
     private int REQUEST_CAMERA = 0;
-
     private int SELECT_FILE = 1;
-
     String isAttachment = "0";
     @BindView(R.id.progressBar)
     AVLoadingIndicatorView progressBar;

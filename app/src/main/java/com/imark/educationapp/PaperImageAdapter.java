@@ -7,7 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.facebook.drawee.view.SimpleDraweeView;
+
+import java.util.ArrayList;
+
+import APIObject.ExamImageObj;
 import Adapter.ViewPaperAdapter;
+import Infrastructure.AppComman;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -18,9 +24,11 @@ import butterknife.OnClick;
 
 public class PaperImageAdapter extends RecyclerView.Adapter<PaperImageAdapter.PaperImageHolder> {
     Activity activity;
+    ArrayList<ExamImageObj> imageObjArrayList;
 
-    public PaperImageAdapter(Activity activity) {
+    public PaperImageAdapter(Activity activity, ArrayList<ExamImageObj> imageObjArrayList) {
         this.activity = activity;
+        this.imageObjArrayList = imageObjArrayList;
     }
 
     @Override
@@ -31,17 +39,21 @@ public class PaperImageAdapter extends RecyclerView.Adapter<PaperImageAdapter.Pa
 
     @Override
     public void onBindViewHolder(PaperImageHolder holder, int position) {
-
+        ExamImageObj examImageObj = imageObjArrayList.get(position);
+        holder.sdvImageview.setController(AppComman.getDraweeController(holder.sdvImageview , examImageObj.getExmimg() , 500));
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return imageObjArrayList.size();
     }
 
     public class PaperImageHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.paperRow)
         RelativeLayout paperRow;
+        @BindView(R.id.sdvImageview)
+        SimpleDraweeView sdvImageview;
+
         public PaperImageHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this ,itemView);

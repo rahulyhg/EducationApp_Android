@@ -18,6 +18,7 @@ import android.widget.TimePicker;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.DraweeView;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.common.ResizeOptions;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
@@ -551,5 +552,6 @@ public class AppComman {
                 return (selectedHour + ":" + selectedMinute + " " + AM_PM);
         }
     }
+
 
 }

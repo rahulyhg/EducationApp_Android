@@ -37,4 +37,5 @@ public class MyPreference {
     public static int GOOGLE_API_CLIENT_ID = 11254;
     public static String loginObj = "LoginObj";
     public static String password = "Password";
+    public static int editProfile = 4478;
 }

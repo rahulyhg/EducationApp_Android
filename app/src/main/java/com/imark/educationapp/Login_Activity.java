@@ -8,6 +8,7 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import API.EducationService;
@@ -68,10 +69,9 @@ public class Login_Activity extends Activity {
     private void callLoginCall(String paw, String emailAddress) {
         AppComman.getInstance(this).setNonTouchableFlags(this);
         progressBar.setVisibility(View.VISIBLE);
-
         if (AppComman.getInstance(this).isConnectingToInternet(this)) {
             EducationService educationService = ServiceGenerator.createService(EducationService.class);
-            call = educationService.caLoginResponseCall(new LoginEntity(emailAddress , paw,"android" , ""));
+            call = educationService.loginResponseCall(new LoginEntity(emailAddress , paw,"android" , ""));
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {
@@ -79,7 +79,7 @@ public class Login_Activity extends Activity {
                     AppComman.getInstance(Login_Activity.this).clearNonTouchableFlags(Login_Activity.this);
                     if (response != null) {
                         RegistrationResponse registrationResponse = (RegistrationResponse) response.body();
-                        if (registrationResponse.getSuccess().equals("1")) {
+                        if (registrationResponse != null && registrationResponse.getSuccess().equals("1")) {
                             getData(registrationResponse.getResult());
                         } else {
                             if (registrationResponse != null)
@@ -107,7 +107,9 @@ public class Login_Activity extends Activity {
     }
 
     private void getData(SignUpObject result) {
+        String userString = new Gson().toJson(result);
         AppComman.getInstance(this).setUserLogin(result.getId());
+        AppComman.getInstance(this).setUserObject(userString);
         startActivity(new Intent(this, Home_Activity.class));
         finishAffinity();
     }

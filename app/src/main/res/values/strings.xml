@@ -85,4 +85,8 @@
     <string name="confiemPasswordnotChange">Password is not matched</string>
     <string name="serverError">Server Error</string>
     <string name="internetFail">Please check your internet connection</string>
+    <string name="noDataFound">No exam found.</string>
+    <string name="pleseName">Please enter  user name</string>
+    <string name="pleaseDate">Please select date</string>
+    <string name="enterUni">Please enter university name</string>
 </resources>

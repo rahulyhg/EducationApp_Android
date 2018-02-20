@@ -16,9 +16,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 
+import APIObject.SignUpObject;
 import Adapter.NavigationAdapter;
+import Infrastructure.AppComman;
 import Model.NavigationModel;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,21 +40,36 @@ public class Home_Activity extends AppCompatActivity
 
     @BindView(R.id.left)
     TextView menuText;
+    @BindView(R.id.emailAddress)
+    TextView emailAddress;
+    @BindView(R.id.userName)
+    TextView userName;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
-
+    @BindView(R.id.profileImg)
+    SimpleDraweeView profileImg;
     @BindView(R.id.navigationRecyclerView)
     RecyclerView navigationRecyclerView;
     ArrayList<NavigationModel> navigationModelList = new ArrayList<>();
     NavigationAdapter navigationAdapter;
-
+    SignUpObject signUpObject;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+        if(getIntent()!= null)
+        {
+            signUpObject = new Gson().fromJson(AppComman.getInstance(this).getUserObject(),SignUpObject.class);
+            if(signUpObject != null) {
+                profileImg.setController(AppComman.getDraweeController(profileImg, signUpObject.getProfilePic(), 400));
+                userName.setText(signUpObject.getName());
+                emailAddress.setText(signUpObject.getEmail());
+            }
+        }
         toolbarText.setText(getResources().getString(R.string.home));
+
         toolbarText.setTextColor(getResources().getColor(R.color.balck));
         menuText.setText(getResources().getString(R.string.menu));
         menuText.setTextSize((int) getResources().getDimension(R.dimen.menu_text));

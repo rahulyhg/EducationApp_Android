@@ -16,6 +16,10 @@ import android.view.Window;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.gson.Gson;
+
+import APIObject.SignUpObject;
 import Infrastructure.AppComman;
 import Infrastructure.MyPreference;
 import butterknife.BindView;
@@ -33,6 +37,22 @@ public class ProfileActivity extends Activity {
     TextView editProfile;
     @BindView(R.id.left)
     TextView backBtn;
+    @BindView(R.id.editTextEmailUserName)
+    TextView editTextEmailUserName;
+    @BindView(R.id.editTextUnivercity)
+    TextView editTextUnivercity;
+    @BindView(R.id.editTextNumPostViews)
+    TextView editTextNumPostViews;
+    @BindView(R.id.editTextEmaillastDateSign)
+    TextView editTextEmaillastDateSign;
+    @BindView(R.id.editTextmemberSince)
+    TextView editTextmemberSince;
+    @BindView(R.id.editTextdateOfBirth)
+    TextView editTextdateOfBirth;
+
+    @BindView(R.id.userProfile)
+    SimpleDraweeView userProfile;
+    SignUpObject signUpObject;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -45,11 +65,26 @@ public class ProfileActivity extends Activity {
         backBtn.setVisibility(View.VISIBLE);
         Window window = this.getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.blue_color));
+        getData();
+    }
+
+    private void getData() {
+        signUpObject = new Gson().fromJson(AppComman.getInstance(this).getUserObject(), SignUpObject.class);
+        if(signUpObject != null){
+            if(!signUpObject.getName().equals(""))
+                editTextEmailUserName.setText(signUpObject.getName());
+            editTextUnivercity.setText(signUpObject.getUniversity());
+            editTextNumPostViews.setText(signUpObject.getViews());
+            editTextEmaillastDateSign.setText(signUpObject.getLastLogin());
+            editTextdateOfBirth.setText(signUpObject.getDateOfBirth());
+            editTextmemberSince.setText(signUpObject.getMenberFrom());
+            userProfile.setController(AppComman.getDraweeController(userProfile , signUpObject.getProfilePic(),500));
+        }
     }
 
     @OnClick(R.id.editText)
     void getEditProfile() {
-        startActivity(new Intent(this, EditProfile_Activity.class));
+        startActivityForResult(new Intent(this, EditProfile_Activity.class) , MyPreference.editProfile);
     }
 
     @OnClick(R.id.left)
@@ -80,5 +115,13 @@ public class ProfileActivity extends Activity {
 
 
         adb.show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == MyPreference.editProfile && resultCode == RESULT_OK){
+            getData();
+        }
     }
 }

@@ -19,8 +19,38 @@ public class SignUpObject {
     String lastLogin;
     @SerializedName("universityId")
     int universityId;
-     @SerializedName("university")
+    @SerializedName("university")
     String university;
+    @SerializedName("views")
+    String views;
+    @SerializedName("menberFrom")
+    String menberFrom;
+    @SerializedName("profilePic")
+    String profilePic;
+
+    public String getViews() {
+        return views;
+    }
+
+    public void setViews(String views) {
+        this.views = views;
+    }
+
+    public String getMenberFrom() {
+        return menberFrom;
+    }
+
+    public void setMenberFrom(String menberFrom) {
+        this.menberFrom = menberFrom;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
 
     public String getId() {
         return id;

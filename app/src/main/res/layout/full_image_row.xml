@@ -13,5 +13,5 @@
         android:layout_height="match_parent"
         android:padding="2.5dp"
         fresco:actualImageScaleType="fitCenter"
-        android:background="@drawable/paper_img"/>
+       />
 </RelativeLayout>

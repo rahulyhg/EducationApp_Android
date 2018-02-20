@@ -6,10 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.imark.educationapp.R;
 import com.imark.educationapp.ViwePaperList_Activity;
 
+import java.util.ArrayList;
+
+import APIObject.ExamListObj;
+import Infrastructure.AppComman;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -20,8 +26,10 @@ import butterknife.OnClick;
 
 public class ViewPaperAdapter  extends RecyclerView.Adapter<ViewPaperAdapter.ViewPaperHolder>{
     Activity activity;
-    public ViewPaperAdapter(Activity activity) {
+    ArrayList<ExamListObj> examListObjsList;
+    public ViewPaperAdapter(Activity activity, ArrayList<ExamListObj> examListObjsList) {
         this.activity = activity;
+        this.examListObjsList = examListObjsList;
     }
 
     @Override
@@ -32,17 +40,34 @@ public class ViewPaperAdapter  extends RecyclerView.Adapter<ViewPaperAdapter.Vie
 
     @Override
     public void onBindViewHolder(ViewPaperHolder holder, int position) {
-
+       ExamListObj examListObj = examListObjsList.get(position);
+        holder.courseName.setText(examListObj.getCourseName());
+        holder.univercityName.setText(examListObj.getCollageName());
+        holder.examType.setText(examListObj.getShortDescription());
+        if(examListObj.getExamImageObjsList().size()!= 0)
+            holder.paperImage.setController(AppComman.getDraweeController(holder.paperImage , examListObj.getExamImageObjsList().get(0).getExmimg() , 400));
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return examListObjsList.size();
     }
 
     public class ViewPaperHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.paper_layout)
         RelativeLayout paper_layout;
+        @BindView(R.id.paperImage)
+        SimpleDraweeView paperImage;
+        @BindView(R.id.univercityName)
+        TextView univercityName;
+        @BindView(R.id.courseName)
+        TextView courseName;
+        @BindView(R.id.examType)
+        TextView examType;
+
+
+
+
         public ViewPaperHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);

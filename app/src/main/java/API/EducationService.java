@@ -1,7 +1,14 @@
 package API;
 
 
+import APIObject.CourseEntity;
+import APIObject.EditProfileEntity;
+import APIObject.ExamSearchEntity;
+import APIObject.ForgotEntity;
 import APIObject.LoginEntity;
+import APIResponse.CommonResponse;
+import APIResponse.CoursesResponse;
+import APIResponse.ExamResponse;
 import APIResponse.LoginResponse;
 import APIResponse.RegistrationResponse;
 
@@ -33,9 +40,33 @@ public interface EducationService {
     );
 
     @POST("login")
-    Call <RegistrationResponse> caLoginResponseCall(
-            LoginEntity loginEntity
+    Call <RegistrationResponse> loginResponseCall(
+            @Body LoginEntity loginEntity
     );
+
+    @POST("forgetPassword")
+    Call <CommonResponse> forgotPasswordCall(
+            @Body ForgotEntity forgotEntity
+    );
+
+    @POST("courses")
+    Call <CoursesResponse> COURSES_RESPONSE_CALL(
+            @Body CourseEntity courseEntity
+    );
+
+    @POST("getExams")
+    Call <ExamResponse> EXAM_RESPONSE_CALL(
+            @Body ExamSearchEntity courseEntity
+    );
+    @Multipart
+    @POST("editProfile/3")
+    Call <RegistrationResponse> editProfilCall(
+            @Part("name") RequestBody name,
+            @Part("dateOfBirth") RequestBody dateOfBirth,
+            @Part("university") RequestBody university,
+            @Part MultipartBody.Part profilePic
+    );
+
 
 
 }
