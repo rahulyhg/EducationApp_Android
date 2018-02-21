@@ -245,6 +245,7 @@ public class EditProfile_Activity extends Activity {
             RequestBody firstName = RequestBody.create(okhttp3.MultipartBody.FORM, userName);
             RequestBody uniNameText = RequestBody.create(okhttp3.MultipartBody.FORM, uniName);
             RequestBody dob = RequestBody.create(okhttp3.MultipartBody.FORM, dobString);
+            RequestBody userId = RequestBody.create(okhttp3.MultipartBody.FORM, AppComman.getInstance(this).getUserID());
             MultipartBody.Part imageUrl = null;
             if (isAttachment.equals("1")) {
                 File file = FileUtils.getFile(this, outPutfileUri);
@@ -253,7 +254,7 @@ public class EditProfile_Activity extends Activity {
             }
             RequestBody fbImg = RequestBody.create(okhttp3.MultipartBody.FORM, "");
 
-            call = educationService.editProfilCall(firstName,dob,uniNameText,imageUrl);
+            call = educationService.editProfilCall(firstName,dob,uniNameText,userId,imageUrl);
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {

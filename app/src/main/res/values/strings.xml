@@ -24,7 +24,7 @@
     <string name="trustYour">Trust your</string>
     <string name="ability">ability!</string>
     <string name="startnow">Start Now !</string>
-    <string name="iAlerdy">I already perticipate !</string>
+    <string name="iAlerdy">I already participate !</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="forgotPassword">Forgot your password?</string>
@@ -89,4 +89,9 @@
     <string name="pleseName">Please enter  user name</string>
     <string name="pleaseDate">Please select date</string>
     <string name="enterUni">Please enter university name</string>
+    <string name="imageuploading">Image Uploading......</string>
+    <string name="pleaseEnterExam">Please enter exam</string>
+    <string name="doImageUpload">Image is uploading, Do you want to cancel?</string>
+    <string name="approved">Approved</string>
+    <string name="pending">Pending</string>
 </resources>

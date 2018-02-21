@@ -78,7 +78,7 @@ public class ViewPaperFilter extends Activity {
         progressBar.setVisibility(View.VISIBLE);
         if (AppComman.getInstance(this).isConnectingToInternet(this)) {
             EducationService educationService = ServiceGenerator.createService(EducationService.class);
-            call = educationService.COURSES_RESPONSE_CALL(new CourseEntity(AppComman.getInstance(this).getUserID()));
+            call = educationService.COURSES_RESPONSE_CALL(new CourseEntity(AppComman.getInstance(this).getUserID() , 1));
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {

@@ -28,10 +28,10 @@
                 android:src="@drawable/camera_icon" />
 
             <CustomControl.ButtonProximanovaSemiBold
+                android:id="@+id/takePicBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_below="@id/cameraIcon"
-
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/white_rounded_button"
                 android:text="@string/takePhoto"
@@ -56,6 +56,7 @@
                 android:src="@drawable/gallary_upload" />
 
             <CustomControl.ButtonProximanovaSemiBold
+                android:id="@+id/galleryBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_below="@id/gallrryImage"

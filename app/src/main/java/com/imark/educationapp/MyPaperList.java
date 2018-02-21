@@ -28,12 +28,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import APIObject.ImageArray;
 import Adapter.ViewPaperAdapter;
 import Adapter.ViewPaperWithAddAdapter;
 import Model.ImageListObj;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static java.lang.System.out;
 
 /**
  * Created by User on 2/16/2018.
@@ -124,9 +127,10 @@ public class MyPaperList extends Activity {
                 Log.e("uri-:", uri);
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), outPutfileUri);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG,60,out);
                     String url = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "title", null);
                     outPutfileUri = Uri.parse(url);
-                    imageArray.add(1, String.valueOf(outPutfileUri));
+                    imageArray.add(0, String.valueOf(outPutfileUri));
                     uploadBy = "0";
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -147,7 +151,7 @@ public class MyPaperList extends Activity {
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                     imageEncoded = cursor.getString(columnIndex);
                     cursor.close();
-                    imageArray.add(1, String.valueOf(imageUri));
+                    imageArray.add(0, String.valueOf(imageUri));
                     uploadBy = "1";
 
                 } else {
@@ -158,7 +162,7 @@ public class MyPaperList extends Activity {
                             ClipData.Item item = mClipData.getItemAt(i);
                             Uri uri = item.getUri();
                             mArrayUri.add(uri);
-                            imageArray.add(1, String.valueOf(uri));
+                            imageArray.add(0, String.valueOf(uri));
                             // Get the cursor
                             Cursor cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
                             // Move to first row
@@ -178,6 +182,7 @@ public class MyPaperList extends Activity {
                         Toast.LENGTH_LONG).show();
             }
             if (imageArray.size() != 0) {
+                imageArray.add(0,"");
                 viewPaperAdapter.notifyDataSetChanged();
             }
 
@@ -211,6 +216,9 @@ public class MyPaperList extends Activity {
 
     @OnClick(R.id.nxtBtn)
     void setNextBtn(){
-        startActivity(new Intent(this , SendPaper_Activity.class));
+        ImageArray imageArrayobj = new ImageArray(imageArray);
+        Intent intent = new Intent(this , SendPaper_Activity.class);
+        intent.putExtra("imageStr",new Gson().toJson(imageArrayobj));
+        startActivity(intent);
     }
 }

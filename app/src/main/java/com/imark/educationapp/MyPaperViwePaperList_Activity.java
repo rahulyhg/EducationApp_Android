@@ -16,12 +16,12 @@ import java.util.ArrayList;
 
 import API.EducationService;
 import API.ServiceGenerator;
-import APIObject.CouserObject;
 import APIObject.ExamListObj;
 import APIObject.ExamSearchEntity;
-import APIObject.LoginEntity;
+import APIObject.MyPaperListObj;
+import APIObject.UserIdObj;
 import APIResponse.ExamResponse;
-import APIResponse.RegistrationResponse;
+import APIResponse.MyExamresponse;
 import Adapter.ViewPaperAdapter;
 import Infrastructure.AppComman;
 import butterknife.BindView;
@@ -32,13 +32,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by User on 2/15/2018.
+ * Created by User on 2/21/2018.
  */
 
-public class ViwePaperList_Activity extends Activity {
+public class MyPaperViwePaperList_Activity extends Activity {
     @BindView(R.id.paperRecycleView)
     RecyclerView paperRecycleView;
-    ViewPaperAdapter viewPaperAdapter;
+
+    MyViewPaperAdapter myViewPaperAdapter;
     @BindView(R.id.toolbarText)
     TextView topBarText;
     @BindView(R.id.left)
@@ -50,18 +51,12 @@ public class ViwePaperList_Activity extends Activity {
     @BindView(R.id.noData)
     TextView nodata;
     Call call;
-    ArrayList<ExamListObj> examListObjsList = new ArrayList<>();
+    ArrayList<MyPaperListObj> examListObjsList = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.paper_list);
         ButterKnife.bind(this);
-        if(getIntent()!= null){
-           uniName = getIntent().getStringExtra("uniName");
-           examType = getIntent().getStringExtra("examType");
-           coueseId = getIntent().getIntExtra("courseId" , 0);
-        }
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         paperRecycleView.setLayoutManager(layoutManager);
         callSearchApi();
@@ -70,15 +65,15 @@ public class ViwePaperList_Activity extends Activity {
     }
 
     private void setAdapter() {
-        viewPaperAdapter = new ViewPaperAdapter(this , examListObjsList);
-        paperRecycleView.setAdapter(viewPaperAdapter);
+        myViewPaperAdapter = new MyViewPaperAdapter(this , examListObjsList);
+        paperRecycleView.setAdapter(myViewPaperAdapter);
     }
 
     public void clickOnRow(int adapterPosition) {
-        String examObj = new Gson().toJson(examListObjsList.get(adapterPosition) , ExamListObj.class);
+        String examObj = new Gson().toJson(examListObjsList.get(adapterPosition) );
         Intent intent = new Intent(this , AllPaperViews_Activity.class);
         intent.putExtra("examObjstr" ,examObj );
-        intent.putExtra("type",1);
+        intent.putExtra("type",0);
         startActivity(intent);
     }
     @OnClick(R.id.left)
@@ -91,37 +86,37 @@ public class ViwePaperList_Activity extends Activity {
         progressBar.setVisibility(View.VISIBLE);
         if (AppComman.getInstance(this).isConnectingToInternet(this)) {
             EducationService educationService = ServiceGenerator.createService(EducationService.class);
-            call = educationService.EXAM_RESPONSE_CALL(new ExamSearchEntity(uniName , coueseId , examType));
+            call = educationService.mMyExamCall(new UserIdObj(AppComman.getInstance(this).getUserID()));
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {
                     progressBar.setVisibility(View.GONE);
-                    AppComman.getInstance(ViwePaperList_Activity.this).clearNonTouchableFlags(ViwePaperList_Activity.this);
+                    AppComman.getInstance(MyPaperViwePaperList_Activity.this).clearNonTouchableFlags(MyPaperViwePaperList_Activity.this);
                     if (response != null) {
-                        ExamResponse registrationResponse = (ExamResponse) response.body();
-                        if (registrationResponse.getSuccess().equals("1")) {
-                           // setAdapter();
+                        MyExamresponse registrationResponse = (MyExamresponse) response.body();
+                        if (registrationResponse.getSuccess()!= null && registrationResponse.getSuccess().equals("1")) {
+                            // setAdapter();
                             nodata.setVisibility(View.GONE);
-                            examListObjsList =  registrationResponse.getExamList();
+                            examListObjsList =  registrationResponse.getMyPaperList();
                             setAdapter();
                         } else {
                             nodata.setVisibility(View.VISIBLE);
                             if (registrationResponse != null)
-                                AppComman.getInstance(ViwePaperList_Activity.this).showDialog(ViwePaperList_Activity.this, registrationResponse.getError());
+                                AppComman.getInstance(MyPaperViwePaperList_Activity.this).showDialog(MyPaperViwePaperList_Activity.this, registrationResponse.getError());
                             else
-                                AppComman.getInstance(ViwePaperList_Activity.this).showDialog(ViwePaperList_Activity.this, getResources().getString(R.string.serverError));
+                                AppComman.getInstance(MyPaperViwePaperList_Activity.this).showDialog(MyPaperViwePaperList_Activity.this, getResources().getString(R.string.serverError));
                         }
 
                     } else
-                        AppComman.getInstance(ViwePaperList_Activity.this).showDialog(ViwePaperList_Activity.this, getResources().getString(R.string.serverError));
+                        AppComman.getInstance(MyPaperViwePaperList_Activity.this).showDialog(MyPaperViwePaperList_Activity.this, getResources().getString(R.string.serverError));
                 }
 
                 @Override
                 public void onFailure(Call call, Throwable t) {
                     nodata.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.GONE);
-                    AppComman.getInstance(ViwePaperList_Activity.this).clearNonTouchableFlags(ViwePaperList_Activity.this);
-                    AppComman.getInstance(ViwePaperList_Activity.this).showDialog(ViwePaperList_Activity.this, getResources().getString(R.string.serverError));
+                    AppComman.getInstance(MyPaperViwePaperList_Activity.this).clearNonTouchableFlags(MyPaperViwePaperList_Activity.this);
+                    AppComman.getInstance(MyPaperViwePaperList_Activity.this).showDialog(MyPaperViwePaperList_Activity.this, getResources().getString(R.string.serverError));
                 }
             });
         } else {

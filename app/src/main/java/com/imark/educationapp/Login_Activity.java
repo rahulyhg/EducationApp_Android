@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.wang.avi.AVLoadingIndicatorView;
@@ -15,6 +16,7 @@ import API.EducationService;
 import API.ServiceGenerator;
 import APIObject.LoginEntity;
 import APIObject.SignUpObject;
+import APIObject.UserIdObj;
 import APIResponse.RegistrationResponse;
 import Infrastructure.AppComman;
 import butterknife.BindView;
@@ -107,12 +109,31 @@ public class Login_Activity extends Activity {
     }
 
     private void getData(SignUpObject result) {
+
         String userString = new Gson().toJson(result);
         AppComman.getInstance(this).setUserLogin(result.getId());
         AppComman.getInstance(this).setUserObject(userString);
+        callLastLoginApi(AppComman.getInstance(this).getUserID());
         startActivity(new Intent(this, Home_Activity.class));
         finishAffinity();
     }
+
+    private void callLastLoginApi(String userID) {
+        EducationService educationService = ServiceGenerator.createService(EducationService.class);
+        call = educationService.mLastLoginApi(new UserIdObj(userID));
+    call.enqueue(new Callback() {
+        @Override
+        public void onResponse(Call call, Response response) {
+            Toast.makeText(Login_Activity.this,"lastlogin",Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onFailure(Call call, Throwable t) {
+
+        }
+    });
+    }
+
 
     @OnClick(R.id.showIcon)
     void setShowPassword() {

@@ -9,9 +9,12 @@ import com.google.gson.annotations.SerializedName;
 public class CourseEntity {
     @SerializedName("userId")
     String userid;
+    @SerializedName("type")
+    int type;
 
-    public CourseEntity(String userid) {
+    public CourseEntity(String userid, int type) {
         this.userid = userid;
+        this.type = type;
     }
 
     public String getUserid() {
@@ -20,5 +23,13 @@ public class CourseEntity {
 
     public void setUserid(String userid) {
         this.userid = userid;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

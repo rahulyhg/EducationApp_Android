@@ -43,7 +43,7 @@ public class ViewPaperAdapter  extends RecyclerView.Adapter<ViewPaperAdapter.Vie
        ExamListObj examListObj = examListObjsList.get(position);
         holder.courseName.setText(examListObj.getCourseName());
         holder.univercityName.setText(examListObj.getCollageName());
-        holder.examType.setText(examListObj.getShortDescription());
+        holder.examType.setText(examListObj.getExamName());
         if(examListObj.getExamImageObjsList().size()!= 0)
             holder.paperImage.setController(AppComman.getDraweeController(holder.paperImage , examListObj.getExamImageObjsList().get(0).getExmimg() , 400));
     }

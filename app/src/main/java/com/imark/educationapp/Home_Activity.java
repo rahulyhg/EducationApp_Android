@@ -61,12 +61,7 @@ public class Home_Activity extends AppCompatActivity
         ButterKnife.bind(this);
         if(getIntent()!= null)
         {
-            signUpObject = new Gson().fromJson(AppComman.getInstance(this).getUserObject(),SignUpObject.class);
-            if(signUpObject != null) {
-                profileImg.setController(AppComman.getDraweeController(profileImg, signUpObject.getProfilePic(), 400));
-                userName.setText(signUpObject.getName());
-                emailAddress.setText(signUpObject.getEmail());
-            }
+            updateUserData();
         }
         toolbarText.setText(getResources().getString(R.string.home));
 
@@ -77,6 +72,15 @@ public class Home_Activity extends AppCompatActivity
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         navigationRecyclerView.setLayoutManager(layoutManager);
         setUpNavigationdrawerManagement();
+    }
+
+    private void updateUserData() {
+        signUpObject = new Gson().fromJson(AppComman.getInstance(this).getUserObject(),SignUpObject.class);
+        if(signUpObject != null) {
+            profileImg.setController(AppComman.getDraweeController(profileImg, signUpObject.getProfilePic(), 400));
+            userName.setText(signUpObject.getName());
+            emailAddress.setText(signUpObject.getEmail());
+        }
     }
 
     private void setUpNavigationdrawerManagement() {
@@ -118,7 +122,9 @@ public class Home_Activity extends AppCompatActivity
                 startActivity(new Intent(this, ProfileActivity.class));
                 break;
             case 2:
-                startActivity(new Intent(this, ViwePaperList_Activity.class));
+                Intent i = new Intent(this , MyPaperViwePaperList_Activity.class);
+
+                startActivity(i);
                 break;
 
             case 3:
@@ -135,11 +141,11 @@ public class Home_Activity extends AppCompatActivity
         }
     }
 
-    @OnClick(R.id.uploadImage)
+    @OnClick(R.id.uploadBtn)
     void setuploadImage(){
         startActivity(new Intent(this , UploadOptionActivity.class));
     }
-    @OnClick(R.id.viewPapers)
+    @OnClick(R.id.viewPaperBtn)
     void setViewPapers(){
         startActivity(new Intent(this , ViewPaperFilter.class));
     }
@@ -152,4 +158,15 @@ public class Home_Activity extends AppCompatActivity
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+       updateUserData();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        updateUserData();
+    }
 }

@@ -1,202 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
-    <include
-        android:id="@+id/topBar"
-        layout="@layout/top_bar" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/topBar">
 
-        <RelativeLayout
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/top_bar" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topBar">
 
-            <ImageView
-                android:id="@+id/capImag"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/hat" />
-
-            <LinearLayout
-                android:id="@+id/univercitylayout"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/capImag"
-                android:layout_marginTop="30dp"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <CustomControl.TextViewProximanovaRegular
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/uni"
-                    android:textSize="12sp" />
+                <ImageView
+                    android:id="@+id/capImag"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/hat" />
 
-                <Spinner
-                    android:id="@+id/univerCity"
+                <LinearLayout
+                    android:id="@+id/univercitylayout"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/view_height"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/capImag"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <CustomControl.TextViewProximanovaRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/courseTitle"
+                        android:textSize="12sp" />
+
+                    <Spinner
+                        android:id="@+id/courseType"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_height"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:autofillHints="Oxford" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/colorGrey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/courselayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/univercitylayout"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:layout_weight="1"
-                    android:autofillHints="Oxford" />
+                    android:layout_marginTop="20dp">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@color/balck">
+
+                        <CustomControl.EditTextProximanovaRegular
+                            android:id="@+id/editTextExam"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:clickable="false"
+                            android:hint="@string/exam"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/balck"
+                            android:textCursorDrawable="@null" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
+                    android:layout_below="@id/courselayout"
+                    android:layout_marginBottom="@dimen/view_horizontal_margin"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorGrey" />
+
+                <LinearLayout
+                    android:id="@+id/shortDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/courselayout"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@color/balck">
+
+                        <CustomControl.EditTextProximanovaRegular
+                            android:id="@+id/editTextshortDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:clickable="false"
+                            android:hint="@string/shortDescription"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/balck"
+                            android:textCursorDrawable="@null" />
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/shortDescription"
+                    android:layout_marginBottom="@dimen/view_horizontal_margin"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@color/colorGrey" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/courselayout"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/univercitylayout"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                >
-
-
-                <android.support.design.widget.TextInputLayout
+                <LinearLayout
+                    android:id="@+id/UniLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintTextAppearance="@color/balck"
-                    >
+                    android:layout_height="50dp"
+                    android:layout_below="@id/shortDescription"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp">
 
-                    <CustomControl.EditTextProximanovaRegular
-                        android:id="@+id/editTextCourse"
+
+                    <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/exam"
-                        android:maxLines="1"
-                        android:textCursorDrawable="@null"
-                        android:clickable="false"
-                        android:textColor="@color/balck"
-                        />
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@color/balck">
 
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
+                        <CustomControl.EditTextProximanovaRegular
+                            android:id="@+id/editTextuniName"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:clickable="false"
+                            android:hint="@string/uni"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/balck"
+                            android:textCursorDrawable="@null" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginBottom="@dimen/view_horizontal_margin"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_below="@id/courselayout"
-                android:background="@color/colorGrey" />
-            <LinearLayout
-                android:id="@+id/shortDescription"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/courselayout"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                >
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
 
-
-                <android.support.design.widget.TextInputLayout
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintTextAppearance="@color/balck"
-                    >
+                    android:layout_height="0.5dp"
+                    android:layout_below="@id/UniLayout"
+                    android:layout_marginBottom="@dimen/view_horizontal_margin"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorGrey" />
 
-                    <CustomControl.EditTextProximanovaRegular
-                        android:id="@+id/editTextshortDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/shortDescription"
-                        android:maxLines="1"
-                        android:textCursorDrawable="@null"
-                        android:clickable="false"
-                        android:textColor="@color/balck"
-                        />
-
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginBottom="@dimen/view_horizontal_margin"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_below="@+id/shortDescription"
-                android:background="@color/colorGrey" />
-
-            <LinearLayout
-                android:id="@+id/UniLayout"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/shortDescription"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                >
-
-
-                <android.support.design.widget.TextInputLayout
+                <CustomControl.ButtonProximanovaSemiBold
+                    android:id="@+id/saveBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintTextAppearance="@color/balck"
-                    >
+                    android:layout_height="40dp"
+                    android:layout_below="@id/UniLayout"
+                    android:layout_marginBottom="60dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/blue_rounded_background"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
-                    <CustomControl.EditTextProximanovaRegular
-                        android:id="@+id/editTextExamText"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/uni"
-                        android:maxLines="1"
-                        android:clickable="false"
-                        android:textCursorDrawable="@null"
-                        android:textColor="@color/balck"
-                        />
+            </RelativeLayout>
 
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
+        </ScrollView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginBottom="@dimen/view_horizontal_margin"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_below="@id/UniLayout"
-                android:background="@color/colorGrey" />
-
-            <CustomControl.ButtonProximanovaSemiBold
-                android:id="@+id/searchBtn"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@id/UniLayout"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_marginBottom="60dp"
-                android:background="@drawable/blue_rounded_background"
-                android:text="@string/save"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
-    </ScrollView>
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/progressBar"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/colorPrimary"
+            app:indicatorName="LineSpinFadeLoaderIndicator" />
+    <RelativeLayout
+        android:id="@+id/uploadinLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cc000000"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uploading......."
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="20dp"/>
+        <ProgressBar
+            android:id="@+id/simpleProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:indeterminateDrawable="@android:drawable/progress_indeterminate_horizontal"
+            android:max="100"
+            android:progress="0"
+            android:progressBackgroundTint="#000000"
+            android:progressDrawable="@android:drawable/progress_horizontal"
+            android:progressTint="@color/blue_color"
+            android:visibility="gone"
+             />
+    </RelativeLayout>
 </RelativeLayout>

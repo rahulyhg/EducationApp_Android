@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
 
     <include
@@ -70,6 +71,7 @@
                 android:minHeight="40dp" />
 
             <CustomControl.ButtonProximanovaSemiBold
+                android:id="@+id/uploadBtn"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
@@ -132,6 +134,7 @@
                 android:src="@drawable/homepaper" />
 
             <CustomControl.ButtonProximanovaSemiBold
+                android:id="@+id/viewPaperBtn"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"

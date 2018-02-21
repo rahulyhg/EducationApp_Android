@@ -44,8 +44,11 @@ public class ViewPaperWithAddAdapter extends RecyclerView.Adapter<ViewPaperWithA
 
         if (position == 0) {
             holder.addIcon.setVisibility(View.VISIBLE);
+            holder.sdvImageview.setImageURI("");
             holder.deleteIcon.setVisibility(View.GONE);
         } else {
+            holder.addIcon.setVisibility(View.GONE);
+            holder.deleteIcon.setVisibility(View.VISIBLE);
             holder.sdvImageview.setImageURI(imageArray.get(position));
         }
 

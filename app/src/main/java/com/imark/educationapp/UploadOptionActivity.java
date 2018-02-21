@@ -32,6 +32,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static java.lang.System.out;
+
 /**
  * Created by User on 2/16/2018.
  */
@@ -60,7 +62,7 @@ public class UploadOptionActivity extends Activity {
         toolBarText.setText(getResources().getString(R.string.upload));
         backBtn.setVisibility(View.VISIBLE);
     }
-    @OnClick(R.id.addCameraImage)
+    @OnClick(R.id.takePicBtn)
     void addCameraImage(){
         requestCameraPermission();
     }
@@ -97,7 +99,7 @@ public class UploadOptionActivity extends Activity {
         startActivityForResult(intent, RESULT_CAPTURE_IMG);
     }
 
-    @OnClick(R.id.addGallary)
+    @OnClick(R.id.galleryBtn)
     void setGallary(){
         requestGalleryPermission();
     }
@@ -132,9 +134,10 @@ public class UploadOptionActivity extends Activity {
                 Log.e("uri-:", uri);
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), outPutfileUri);
+                    bitmap.compress(Bitmap.CompressFormat.JPEG,60,out);
                     String url = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "title", null);
                     outPutfileUri = Uri.parse(url);
-                 localArray.add(String.valueOf(outPutfileUri));
+                 localArray.add(0,String.valueOf(outPutfileUri));
                  uploadBy = "0";
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -155,7 +158,7 @@ public class UploadOptionActivity extends Activity {
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                     imageEncoded = cursor.getString(columnIndex);
                     cursor.close();
-                    localArray.add(String.valueOf(imageUri));
+                    localArray.add(0,String.valueOf(imageUri));
                     uploadBy = "1";
 
                 } else {
