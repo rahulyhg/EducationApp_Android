@@ -17,7 +17,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
        >
 
         <RelativeLayout
@@ -72,6 +71,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="25dp"
                 android:padding="2dp"
+                android:visibility="invisible"
                 android:src="@drawable/fine" />
 
             <LinearLayout
@@ -85,7 +85,6 @@
 
 
                 <android.support.design.widget.TextInputLayout
-                    app:hintTextAppearance="@color/balck"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -130,37 +129,37 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="25dp"
                 android:padding="2dp"
+                android:visibility="invisible"
                 android:src="@drawable/fine" />
 
-            <LinearLayout
-                android:id="@+id/llayout1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toLeftOf="@id/showIcon1">
+
 
 
                 <android.support.design.widget.TextInputLayout
-
-                    app:hintTextAppearance="@color/balck"
+android:id="@+id/llayout1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/showIcon1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp">
 
 
                     <CustomControl.EditTextProximanovaRegular
                         android:id="@+id/dobEditText"
                         android:textColor="@color/balck"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
+                        android:focusableInTouchMode="false"
                         android:background="@android:color/transparent"
                         android:hint="@string/dateOfBirth"
+                        app:hintTextAppearance="@style/TextLabel"
                         android:textCursorDrawable="@null"
+                        android:cursorVisible="false"
                         android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
+
 
 
             <View
@@ -189,6 +188,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="25dp"
                 android:padding="2dp"
+                android:visibility="invisible"
                 android:src="@drawable/fine" />
 
             <LinearLayout
@@ -202,7 +202,6 @@
 
 
                 <android.support.design.widget.TextInputLayout
-                    app:hintTextAppearance="@color/balck"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 

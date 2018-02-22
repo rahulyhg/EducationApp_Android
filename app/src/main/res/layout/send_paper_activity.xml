@@ -43,6 +43,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="15dp"
                         android:text="@string/courseTitle"
+                        android:paddingLeft="10dp"
                         android:textSize="12sp" />
 
                     <Spinner
@@ -75,7 +76,7 @@
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:hintTextAppearance="@color/balck">
+                        >
 
                         <CustomControl.EditTextProximanovaRegular
                             android:id="@+id/editTextExam"
@@ -86,8 +87,9 @@
                             android:hint="@string/exam"
                             android:inputType="text"
                             android:maxLines="1"
+                            android:paddingLeft="10dp"
                             android:textColor="@color/balck"
-                            android:textCursorDrawable="@null" />
+                            />
 
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
@@ -97,8 +99,8 @@
                     android:layout_height="0.5dp"
                     android:layout_below="@id/courselayout"
                     android:layout_marginBottom="@dimen/view_horizontal_margin"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:background="@color/colorGrey" />
 
                 <LinearLayout
@@ -114,7 +116,7 @@
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:hintTextAppearance="@color/balck">
+                       >
 
                         <CustomControl.EditTextProximanovaRegular
                             android:id="@+id/editTextshortDescription"
@@ -125,8 +127,9 @@
                             android:hint="@string/shortDescription"
                             android:inputType="text"
                             android:maxLines="1"
+                            android:paddingLeft="10dp"
                             android:textColor="@color/balck"
-                            android:textCursorDrawable="@null" />
+                            />
 
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
@@ -136,8 +139,8 @@
                     android:layout_height="0.5dp"
                     android:layout_below="@+id/shortDescription"
                     android:layout_marginBottom="@dimen/view_horizontal_margin"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:background="@color/colorGrey" />
 
                 <LinearLayout
@@ -153,7 +156,7 @@
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:hintTextAppearance="@color/balck">
+                       >
 
                         <CustomControl.EditTextProximanovaRegular
                             android:id="@+id/editTextuniName"
@@ -164,8 +167,9 @@
                             android:hint="@string/uni"
                             android:inputType="text"
                             android:maxLines="1"
+                            android:paddingLeft="10dp"
                             android:textColor="@color/balck"
-                            android:textCursorDrawable="@null" />
+                            />
 
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
@@ -175,8 +179,8 @@
                     android:layout_height="0.5dp"
                     android:layout_below="@id/UniLayout"
                     android:layout_marginBottom="@dimen/view_horizontal_margin"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:background="@color/colorGrey" />
 
                 <CustomControl.ButtonProximanovaSemiBold

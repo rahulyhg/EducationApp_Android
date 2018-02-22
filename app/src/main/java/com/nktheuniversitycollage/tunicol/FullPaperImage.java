@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import APIObject.ExamImageObj;
 import APIObject.ExamListObj;
+import APIObject.MyPaperListObj;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -33,10 +34,19 @@ public class FullPaperImage extends Activity {
         setContentView(R.layout.full_image_view);
         ButterKnife.bind(this);
         if(getIntent()!= null){
-           ExamListObj examListObj = new Gson().fromJson(getIntent().getStringExtra("examObjstr") , ExamListObj.class);
             pos = getIntent().getIntExtra("pos" , pos);
-           if(examListObj!= null)
-                imageObjArrayList = examListObj.getExamImageObjsList();
+            if(getIntent().getIntExtra("type",0)==0) {
+                ExamListObj examListObj = new Gson().fromJson(getIntent().getStringExtra("examObjstr"), ExamListObj.class);
+                if(examListObj!= null)
+                    imageObjArrayList = examListObj.getExamImageObjsList();
+            }
+            else {
+                MyPaperListObj examListObj = new Gson().fromJson(getIntent().getStringExtra("examObjstr"), MyPaperListObj.class);
+                if(examListObj!= null)
+                    imageObjArrayList = examListObj.getExamImg();
+            }
+
+
         }
         LinearLayoutManager myLayout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         SnapHelper snapHelper = new PagerSnapHelper();

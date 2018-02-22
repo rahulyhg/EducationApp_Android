@@ -56,7 +56,7 @@ public class MyPaperViwePaperList_Activity extends Activity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         paperRecycleView.setLayoutManager(layoutManager);
         callSearchApi();
-        topBarText.setText("University Paper");
+        topBarText.setText(getResources().getString(R.string.myPaper));
         backBtn.setVisibility(View.VISIBLE);
     }
 

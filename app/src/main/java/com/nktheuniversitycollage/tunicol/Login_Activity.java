@@ -242,6 +242,8 @@ public class Login_Activity extends AppCompatActivity {
         String userString = new Gson().toJson(result);
         AppComman.getInstance(this).setUserLogin(result.getId());
         AppComman.getInstance(this).setUserObject(userString);
+        AppComman.getInstance(this).setUserObject(userString);
+        AppComman.getInstance(this).setLoginType(result.getLoginType());
         callLastLoginApi(AppComman.getInstance(this).getUserID());
         startActivity(new Intent(this, Home_Activity.class));
         finishAffinity();

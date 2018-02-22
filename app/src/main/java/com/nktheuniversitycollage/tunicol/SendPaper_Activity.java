@@ -74,9 +74,10 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
     @BindView(R.id.simpleProgressBar)
     ProgressBar uploadingProgressBar;
     RequestBody requestFile;
-    int imageRequest , imageResponse = 0;
+    int imageRequest, imageResponse = 0;
     @BindView(R.id.uploadinLayout)
     RelativeLayout uploadinLayout;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +87,7 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
             imageArray = new Gson().fromJson(getIntent().getStringExtra("imageStr"), ImageArray.class);
 
         }
-        topBarText.setText("The University Collage");
+        topBarText.setText(getResources().getString(R.string.app_name));
         backBtn.setVisibility(View.VISIBLE);
         getCourseList();
         courseType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -107,7 +108,7 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
         progressBar.setVisibility(View.VISIBLE);
         if (AppComman.getInstance(this).isConnectingToInternet(this)) {
             EducationService educationService = ServiceGenerator.createService(EducationService.class);
-            call = educationService.COURSES_RESPONSE_CALL(new CourseEntity(AppComman.getInstance(this).getUserID() , 0));
+            call = educationService.COURSES_RESPONSE_CALL(new CourseEntity(AppComman.getInstance(this).getUserID(), 0));
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {
@@ -157,21 +158,21 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
     @OnClick(R.id.saveBtn)
     void setSerarch() {
         String examStr = "";
-                examStr = editTextExam.getText().toString().trim();
+        examStr = editTextExam.getText().toString().trim();
         String sortDiscption = "";
-         sortDiscption = editTextshortDescription.getText().toString().trim();
+        sortDiscption = editTextshortDescription.getText().toString().trim();
         String uniName = "";
-      uniName = editTextuniName.getText().toString().trim();
+        uniName = editTextuniName.getText().toString().trim();
         int courseId = 0;
-        if(couserObjectArrayList!=null && couserObjectArrayList.size()!= 0){
+        if (couserObjectArrayList != null && couserObjectArrayList.size() != 0) {
             courseId = couserObjectArrayList.get(courseIdPos).getId();
         }
-        if(examStr.equals(""))
+        if (examStr.equals(""))
             editTextExam.setError(getResources().getString(R.string.pleaseEnterExam));
-        else if(uniName.equals(""))
+        else if (uniName.equals(""))
             editTextuniName.setError(getResources().getString(R.string.enterUni));
         else
-        uploadExamData(examStr, sortDiscption, uniName, AppComman.getInstance(this).getUserID() , courseId);
+            uploadExamData(examStr, sortDiscption, uniName, AppComman.getInstance(this).getUserID(), courseId);
        /* startActivity(new Intent(this, Home_Activity.class));
         finish();*/
     }
@@ -181,7 +182,7 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
         progressBar.setVisibility(View.VISIBLE);
         if (AppComman.getInstance(this).isConnectingToInternet(this)) {
             EducationService educationService = ServiceGenerator.createService(EducationService.class);
-            call = educationService.mUpdateExamResponseCall(new UpdateExamEntity(courseId , examStr , sortDiscption,uniName,userID));
+            call = educationService.mUpdateExamResponseCall(new UpdateExamEntity(courseId, examStr, sortDiscption, uniName, userID));
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {
@@ -190,7 +191,7 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
                     if (response != null) {
                         UpdateExamResponse registrationResponse = (UpdateExamResponse) response.body();
                         if (registrationResponse != null && registrationResponse.getSuccess().equals("1")) {
-                           startUploadingImagesCall(registrationResponse.getExamIdObj().getExamId());
+                            startUploadingImagesCall(registrationResponse.getExamIdObj().getExamId());
                             uploadinLayout.setVisibility(View.VISIBLE);
                         } else {
                             if (registrationResponse != null)
@@ -218,9 +219,9 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
     }
 
     private void startUploadingImagesCall(String examId) {
-        imageRequest = imageArray.getImagesPath().size()-1;
-        for(int i = 1; i < imageArray.getImagesPath().size();i++){
-            startUploadingImages(examId , imageArray.getImagesPath().get(i));
+        imageRequest = imageArray.getImagesPath().size() - 1;
+        for (int i = 1; i < imageArray.getImagesPath().size(); i++) {
+            startUploadingImages(examId, imageArray.getImagesPath().get(i));
         }
     }
 
@@ -230,20 +231,20 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
             AppComman.getInstance(SendPaper_Activity.this).setNonTouchableFlags(SendPaper_Activity.this);
             //progressBar.setVisibility(View.VISIBLE);
             EducationService educationService = ServiceGenerator.createService(EducationService.class);
-            RequestBody examIdTxt = RequestBody.create(okhttp3.MultipartBody.FORM,id );
+            RequestBody examIdTxt = RequestBody.create(okhttp3.MultipartBody.FORM, id);
             MultipartBody.Part imageUrl = null;
             File file = FileUtils.getFile(this, imageUri);
-          //  RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
+            //  RequestBody requestFile = RequestBody.create(MediaType.parse("image/*"), file);
 
-                uploadingProgressBar.setVisibility(View.VISIBLE);
-                ProgressRequestBody fileBody = new ProgressRequestBody(file, this);
-                if (file != null) {
-                    requestFile =
-                            RequestBody.create(
-                                    MediaType.parse(getContentResolver().getType(imageUri)),
-                                    file
-                            );
-                }
+            uploadingProgressBar.setVisibility(View.VISIBLE);
+            ProgressRequestBody fileBody = new ProgressRequestBody(file, this);
+            if (file != null) {
+                requestFile =
+                        RequestBody.create(
+                                MediaType.parse(getContentResolver().getType(imageUri)),
+                                file
+                        );
+            }
             imageUrl = MultipartBody.Part.createFormData("images", file.getName(), fileBody);
 
             callImage = educationService.addImage(examIdTxt, imageUrl);
@@ -253,19 +254,18 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
                     imageResponse++;
                     CommonResponse commonResponse = (CommonResponse) response.body();
                     AppComman.getInstance(SendPaper_Activity.this).clearNonTouchableFlags(SendPaper_Activity.this);
-                    if(commonResponse.getResult()!= null && commonResponse.getSuccess().equals("1")){
-                       if(imageResponse == imageRequest) {
-                           uploadingProgressBar.setVisibility(View.GONE);
-                           uploadinLayout.setVisibility(View.GONE);
-                           Toast.makeText(SendPaper_Activity.this,"Upload Successful",Toast.LENGTH_SHORT).show();
-                           startActivity(new Intent(SendPaper_Activity.this , Home_Activity.class));
-                           finishAffinity();
-                       }
+                    if (commonResponse.getResult() != null && commonResponse.getSuccess().equals("1")) {
+                        if (imageResponse == imageRequest) {
+                            uploadingProgressBar.setVisibility(View.GONE);
+                            uploadinLayout.setVisibility(View.GONE);
+                            Toast.makeText(SendPaper_Activity.this, "Upload Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SendPaper_Activity.this, Home_Activity.class));
+                            finishAffinity();
+                        }
 
-                    }
-                    else {
+                    } else {
                         uploadingProgressBar.setVisibility(View.GONE);
-                    Toast.makeText(SendPaper_Activity.this,"somthing wrong",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SendPaper_Activity.this, "somthing wrong", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -274,7 +274,7 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
                     imageResponse++;
                     AppComman.getInstance(SendPaper_Activity.this).clearNonTouchableFlags(SendPaper_Activity.this);
                     uploadingProgressBar.setVisibility(View.GONE);
-                    Toast.makeText(SendPaper_Activity.this,"fail",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SendPaper_Activity.this, "fail", Toast.LENGTH_SHORT).show();
                 }
             });
         } else {
@@ -322,29 +322,11 @@ public class SendPaper_Activity extends Activity implements AdapterView.OnItemSe
     }
 
     @Override
-    public void onBackPressed() {
-      if(callImage != null ) {
-          AlertDialog.Builder adb = new AlertDialog.Builder(this);
-          adb.setTitle(getResources().getString(R.string.app_name));
-          adb.setMessage(getResources().getString(R.string.doImageUpload));
-          adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog, int which) {
-                  callImage.cancel();
-                  finish();
-
-              }
-
-          });
-          adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog, int which) {
-                  dialog.dismiss();
-              }
-          });
-
-
-          adb.show();
-      }
+    protected void onDestroy() {
+        super.onDestroy();
+        if(call != null)
+            call.cancel();
+        if(callImage!=null)
+            callImage.cancel();
     }
 }

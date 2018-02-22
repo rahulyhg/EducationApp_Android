@@ -64,11 +64,11 @@ public class Home_Activity extends AppCompatActivity
             updateUserData();
         }
         toolbarText.setText(getResources().getString(R.string.home));
-
-        toolbarText.setTextColor(getResources().getColor(R.color.balck));
+       // toolbarText.setTextColor(getResources().getColor(R.color.white));
         menuText.setText(getResources().getString(R.string.menu));
         menuText.setTextSize((int) getResources().getDimension(R.dimen.menu_text));
         menuText.setVisibility(View.VISIBLE);
+       // menuText.setTextColor(getResources().getColor(R.color.white));
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         navigationRecyclerView.setLayoutManager(layoutManager);
         setUpNavigationdrawerManagement();
@@ -99,9 +99,10 @@ public class Home_Activity extends AppCompatActivity
 
         navigationModel = new NavigationModel(ContextCompat.getDrawable(this, R.drawable.priva), getResources().getString(R.string.privacy_policy));
         navigationModelList.add(navigationModel);
-
-        navigationModel = new NavigationModel(ContextCompat.getDrawable(this, R.drawable.key), getResources().getString(R.string.resetPassword));
-        navigationModelList.add(navigationModel);
+if(AppComman.getInstance(this).getLoginType().equals("byUser")) {
+    navigationModel = new NavigationModel(ContextCompat.getDrawable(this, R.drawable.key), getResources().getString(R.string.resetPassword));
+    navigationModelList.add(navigationModel);
+}
         navigationAdapter = new NavigationAdapter(navigationModelList, Home_Activity.this);
         navigationRecyclerView.setAdapter(navigationAdapter);
     }

@@ -46,6 +46,7 @@ Call call;
     ArrayList<ExamImageObj>imageObjArrayList = new ArrayList<>();
    MyPaperListObj examListObjsList ;
     ExamListObj examListObj ;
+    int type;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,12 +59,13 @@ Call call;
                 if (examListObj != null){
                     imageObjArrayList = examListObj.getExamImageObjsList();
                     callHits(examListObj.getId());
+                    type = 0;
                 }
             }else{
                 examListObjsList = new Gson().fromJson(getIntent().getStringExtra("examObjstr"), MyPaperListObj.class);
                 if (examListObjsList != null){
                     imageObjArrayList = examListObjsList.getExamImg();
-
+                    type = 1;
                 }
 
             }
@@ -103,9 +105,15 @@ Call call;
 
     public void openInFullView(int adapterPosition) {
         Intent intent = new Intent(this ,FullPaperImage.class );
-        String examObj = new Gson().toJson(examListObj , ExamListObj.class);
+        String examObj;
+        if(type == 0)
+         examObj = new Gson().toJson(examListObj );
+        else
+            examObj = new Gson().toJson(examListObjsList );
         intent.putExtra("examObjstr" ,examObj );
         intent.putExtra("pos",adapterPosition);
+        intent.putExtra("type",type);
+
         startActivity(intent);
     }
     @OnClick(R.id.left)

@@ -27,6 +27,8 @@ public class SignUpObject {
     String menberFrom;
     @SerializedName("profilePic")
     String profilePic;
+    @SerializedName("loginType")
+    String loginType;
 
     public String getViews() {
         return views;
@@ -106,5 +108,13 @@ public class SignUpObject {
 
     public void setUniversity(String university) {
         this.university = university;
+    }
+
+    public String getLoginType() {
+        return loginType;
+    }
+
+    public void setLoginType(String loginType) {
+        this.loginType = loginType;
     }
 }

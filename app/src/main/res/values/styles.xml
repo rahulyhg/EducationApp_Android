@@ -9,12 +9,8 @@
         <item name="alertDialogTheme">@style/AlertDialogTheme</item>
     </style>
     <style name="EditTextHintGray_Black">
-        <item name="colorAccent">@color/balck</item>
-        <item name="android:textColorHint">@color/balck</item>
-        <item name="colorControlNormal">@color/balck</item>
-        <item name="colorPrimaryDark">@color/balck</item>
-        <item name="colorControlActivated">@color/balck</item>
-        <item name="colorControlHighlight">@color/balck</item>
+        <item name="colorAccent">@color/white</item>
+
     </style>
 
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
@@ -29,5 +25,7 @@
     <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
-
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

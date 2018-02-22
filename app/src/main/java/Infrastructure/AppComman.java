@@ -552,5 +552,15 @@ public class AppComman {
         }
     }
 
+    public void setLoginType(String type) {
+        SharedPreferences.Editor editor = mContext.getSharedPreferences(MyPreference.mPreferences, MODE_PRIVATE).edit();
+        editor.putString(MyPreference.localUserId, type);
+        editor.apply();
+    }
+
+    public String getLoginType() {
+        SharedPreferences mSharedPreferences = mContext.getSharedPreferences(MyPreference.mPreferences, MODE_PRIVATE);
+        return mSharedPreferences.getString(MyPreference.localUserId, "");
+    }
 
 }

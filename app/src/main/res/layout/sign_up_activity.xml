@@ -66,6 +66,7 @@
                         android:id="@+id/usernameWrapper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:theme="@style/EditTextHintGray_Black"
                         android:textColorHint="@color/white">
 
                         <CustomControl.EditTextProximanovaRegular
@@ -115,6 +116,7 @@
 
                         <android.support.design.widget.TextInputLayout
                             android:id="@+id/passwordWrapper"
+                            android:theme="@style/EditTextHintGray_Black"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColorHint="@color/white">
@@ -172,6 +174,7 @@
                             android:id="@+id/passwordWrapper2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:theme="@style/EditTextHintGray_Black"
                             android:textColorHint="@color/white">
 
                             <CustomControl.EditTextProximanovaRegular
@@ -213,6 +216,7 @@
                         android:id="@+id/uniWrapper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:theme="@style/EditTextHintGray_Black"
                         android:textColorHint="@color/white">
 
                         <CustomControl.EditTextProximanovaRegular

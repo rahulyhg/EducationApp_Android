@@ -119,6 +119,8 @@ public class SignUp_Activity extends Activity {
             cmfPassword.setError(getString(R.string.confirmPasswordValidation));
         } else if (!pw2.equals(pw1)) {
             cmfPassword.setError(getString(R.string.confiemPasswordnotChange));
+        }else if (uniName.equals("")) {
+            editTextEmailUniName.setError(getString(R.string.enterUni));
         } else {
             callRegistration(emailAddress, pw1, pw2, uniName);
         }
@@ -185,6 +187,7 @@ public class SignUp_Activity extends Activity {
 
     private void getData(SignUpObject result) {
         AppComman.getInstance(this).setUserLogin(result.getId());
+        AppComman.getInstance(this).setLoginType(result.getLoginType());
         AppComman.getInstance(this).setUserObject(new Gson().toJson(result));
         startActivity(new Intent(this, Home_Activity.class));
         finishAffinity();

@@ -96,4 +96,8 @@
     <string name="pending">Pending</string>
     <string name="facebook_app_id">1867536726598979</string>
     <string name="fb_login_protocol_scheme">fb1867536726598979</string>
+    <string name="pleaseenteroldPwd">Please enter privous password</string>
+    <string name="pleaseenternewPwd">Please enter new password</string>
+    <string name="cmfPassword">Please enter cofirm password</string>
+    <string name="resetPasswordSuccessfully">Password reset succeeded</string>
 </resources>

@@ -89,7 +89,7 @@ public class MyViewPaperAdapter extends RecyclerView.Adapter<MyViewPaperAdapter.
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
-        @OnClick(R.id.paper_layout)
+        @OnClick({R.id.paper_layout,R.id.cardView,R.id.rrlayout})
         void setPaper_layout(){
             ((MyPaperViwePaperList_Activity)activity).clickOnRow(getAdapterPosition());
         }

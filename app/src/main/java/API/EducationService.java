@@ -7,6 +7,7 @@ import APIObject.ExamSearchEntity;
 import APIObject.ForgotEntity;
 import APIObject.HistObj;
 import APIObject.LoginEntity;
+import APIObject.ResetPasswordEntity;
 import APIObject.SocialLoginObj;
 import APIObject.UpdateExamEntity;
 import APIObject.UserIdObj;
@@ -97,6 +98,11 @@ public interface EducationService {
     @POST("socailLogin")
     Call<RegistrationResponse> mSocialLogin(
            @Body SocialLoginObj socialLoginObj
+    );
+
+    @POST("changePassword")
+    Call<CommonResponse> resetPassword(
+           @Body ResetPasswordEntity resetPasswordEntity
     );
 
     @Multipart

@@ -41,7 +41,8 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="15dp"
                     android:text="@string/courseTitle"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:paddingLeft="10dp"/>
 
                 <Spinner
                     android:id="@+id/courseType"
@@ -74,7 +75,6 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:hintTextAppearance="@color/balck"
                     >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -85,6 +85,7 @@
                         android:hint="@string/uni"
                         android:maxLines="1"
                         android:clickable="false"
+                        android:paddingLeft="10dp"
                         android:textCursorDrawable="@null"
                         android:textColor="@color/balck"
                         />
@@ -96,8 +97,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginBottom="@dimen/view_horizontal_margin"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_below="@id/courselayout"
                 android:background="@color/colorGrey" />
 
@@ -115,7 +116,6 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:hintTextAppearance="@color/balck"
                     >
 
                     <CustomControl.EditTextProximanovaRegular
@@ -126,6 +126,7 @@
                         android:hint="@string/examType"
                         android:maxLines="1"
                         android:clickable="false"
+                        android:paddingLeft="10dp"
                         android:textColor="@color/balck"
                         android:textCursorDrawable="@null"
                         />
@@ -137,8 +138,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginBottom="@dimen/view_horizontal_margin"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_below="@id/examLayout"
                 android:background="@color/colorGrey" />
 
