@@ -7,6 +7,7 @@ import APIObject.ExamSearchEntity;
 import APIObject.ForgotEntity;
 import APIObject.HistObj;
 import APIObject.LoginEntity;
+import APIObject.SocialLoginObj;
 import APIObject.UpdateExamEntity;
 import APIObject.UserIdObj;
 import APIResponse.CommonResponse;
@@ -92,6 +93,10 @@ public interface EducationService {
     @POST("myExams")
     Call<MyExamresponse> mMyExamCall(
            @Body UserIdObj userIdObj
+    );
+    @POST("socailLogin")
+    Call<RegistrationResponse> mSocialLogin(
+           @Body SocialLoginObj socialLoginObj
     );
 
     @Multipart

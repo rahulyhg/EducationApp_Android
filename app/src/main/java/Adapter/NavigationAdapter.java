@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.imark.educationapp.Home_Activity;
-import com.imark.educationapp.R;
+import com.nktheuniversitycollage.tunicol.Home_Activity;
+import com.nktheuniversitycollage.tunicol.R;
 
 import java.util.ArrayList;
 

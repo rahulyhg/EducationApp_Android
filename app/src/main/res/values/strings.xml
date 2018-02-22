@@ -41,7 +41,7 @@
     <string name="emailAddress">please enter your email address</string>
     <string name="send">Send</string>
     <string name="upload">Upload</string>
-    <string name="viewPaper">View Paper</string>
+    <string name="viewPaper">View Papers</string>
     <string name="papers">Papers</string>
     <string name="dammyText">Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
     <string name="home">Home</string>
@@ -53,7 +53,7 @@
     <string name="univercity">University</string>
     <string name="dateLastSignIn">Date Last Signed In</string>
     <string name="numOfViews">Number of Views on Post</string>
-    <string name="memberSince">Mamber Since</string>
+    <string name="memberSince">Member Since</string>
     <string name="name">Name</string>
     <string name="signout">Sign out</string>
     <string name="editText">Edit</string>
@@ -94,4 +94,6 @@
     <string name="doImageUpload">Image is uploading, Do you want to cancel?</string>
     <string name="approved">Approved</string>
     <string name="pending">Pending</string>
+    <string name="facebook_app_id">1867536726598979</string>
+    <string name="fb_login_protocol_scheme">fb1867536726598979</string>
 </resources>

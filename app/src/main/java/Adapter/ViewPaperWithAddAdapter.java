@@ -7,12 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.imark.educationapp.MyPaperList;
-import com.imark.educationapp.R;
-import com.imark.educationapp.ViwePaperList_Activity;
+import com.nktheuniversitycollage.tunicol.MyPaperList;
+import com.nktheuniversitycollage.tunicol.R;
 
 import java.util.ArrayList;
 

@@ -18,7 +18,7 @@ import android.util.Log;
 import android.webkit.MimeTypeMap;
 
 
-import com.imark.educationapp.R;
+import com.nktheuniversitycollage.tunicol.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;

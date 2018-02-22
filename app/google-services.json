@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "775206171537",
+    "firebase_url": "https://the-university-collage-28080.firebaseio.com",
+    "project_id": "the-university-collage-28080",
+    "storage_bucket": "the-university-collage-28080.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775206171537:android:c475edb1af68a348",
+        "android_client_info": {
+          "package_name": "com.nktheuniversitycollage.tunicol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775206171537-uvlsf9dbbnn09eanon47ia648bfvpfr9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nktheuniversitycollage.tunicol",
+            "certificate_hash": "feb603277f0cc74124a8aa5fac17b99d42592cef"
+          }
+        },
+        {
+          "client_id": "775206171537-7uet8e71p2k9i65iq6jo34e71mc2o1p0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdx9z3sMZ_gI8bD8xkzQaDeSRCHxC7Unc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775206171537-7uet8e71p2k9i65iq6jo34e71mc2o1p0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

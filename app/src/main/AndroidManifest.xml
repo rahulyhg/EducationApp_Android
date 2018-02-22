@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.imark.educationapp">
+    package="com.nktheuniversitycollage.tunicol">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".EducationApp"
+        android:name="com.nktheuniversitycollage.tunicol.EducationApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,81 +21,81 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.nktheuniversitycollage.tunicol.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectionActivity" />
+        <activity android:name="com.nktheuniversitycollage.tunicol.SelectionActivity" />
         <activity
-            android:name=".Login_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.Login_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".ForgotPassword_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.ForgotPassword_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".SignUp_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.SignUp_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Home_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.Home_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".ProfileActivity"
+            android:name="com.nktheuniversitycollage.tunicol.ProfileActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".EditProfile_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.EditProfile_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".ViewPaperFilter"
+            android:name="com.nktheuniversitycollage.tunicol.ViewPaperFilter"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".ViwePaperList_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.ViwePaperList_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".AllPaperViews_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.AllPaperViews_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".FullPaperImage"
+            android:name="com.nktheuniversitycollage.tunicol.FullPaperImage"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".UploadOptionActivity"
+            android:name="com.nktheuniversitycollage.tunicol.UploadOptionActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".MyPaperList"
+            android:name="com.nktheuniversitycollage.tunicol.MyPaperList"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".SendPaper_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.SendPaper_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".TermsConditionsActivity"
+            android:name="com.nktheuniversitycollage.tunicol.TermsConditionsActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".PreivacyPolicyActivity"
+            android:name="com.nktheuniversitycollage.tunicol.PreivacyPolicyActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
 
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name="com.nktheuniversitycollage.tunicol.ResetPasswordActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".MyPaperViwePaperList_Activity"
+            android:name="com.nktheuniversitycollage.tunicol.MyPaperViwePaperList_Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
 
@@ -108,7 +108,26 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
 
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBLW0qIsqw5jrRPg-ktEAWLwgVXRCfemMc" />
 
     </application>
 

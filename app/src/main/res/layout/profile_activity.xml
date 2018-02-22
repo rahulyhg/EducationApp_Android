@@ -168,7 +168,7 @@
                             android:layout_height="40dp"
                             android:background="@android:color/transparent"
                             android:clickable="false"
-                            android:focusable="true"
+                            android:focusable="false"
                             android:hint="@string/numOfViews"
                             android:maxLines="1"
                             android:textColor="@color/balck" />

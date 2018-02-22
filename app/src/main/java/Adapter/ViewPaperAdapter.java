@@ -9,8 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.imark.educationapp.R;
-import com.imark.educationapp.ViwePaperList_Activity;
+import com.nktheuniversitycollage.tunicol.R;
+import com.nktheuniversitycollage.tunicol.ViwePaperList_Activity;
 
 import java.util.ArrayList;
 
